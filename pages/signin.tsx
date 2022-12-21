@@ -3,8 +3,8 @@ import React from "react";
 export default function signin() {
   return (
     <div className="w-screen h-screen bg-[#196C84] py-10">
-      <div className="flex  flex-col  justify-center align-middle items-center shadow-md  rounded-3xl space-y-3  bg-white p-28 w-1/2 h-1/2 border-2  my-32 mx-auto">
-        <h1 className="font-bold text-[#196C84] text-3xl">Connexion</h1>
+      <div className="flex  flex-col  justify-center align-middle items-center shadow-md  rounded-[50px] space-y-3  bg-white p-28 w-1/2 h-1/2 border-2  my-32 mx-auto">
+        <h1 className="font-bold text-[#196C84]  text-3xl">Connexion</h1>
         <input
           type="text"
           id="email"
