@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function renewPassword() {
   return (
@@ -28,7 +29,7 @@ export default function renewPassword() {
           {" "}
           Envoyer
         </button>
-        <p>{`S'inscrire`}</p>
+        <Link href="./signUp">{`S'inscrire`}</Link>
       </div>
     </div>
   );

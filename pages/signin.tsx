@@ -31,7 +31,7 @@ export default function signin() {
           Envoyer
         </button>
         <p>
-          <Link href="./registrationPage">{`S'inscrire`}</Link>
+          <Link href="./signUp">{`S'inscrire`}</Link>
         </p>
       </div>
     </div>
