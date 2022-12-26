@@ -1,12 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import Navbar1 from "./components/Navbar1";
+import Footer from "./components/Footer";
 
 export default function signin() {
   return (
-    <div>
+    <div className="h-screen w-screen">
       <Navbar1 />
-      <div className="w-screen h-screen bg-[#196C84] py-10">
+      <div className="w-screen h-[86%] bg-[#196C84] py-10">
         <div className="flex  flex-col  justify-center align-middle items-center shadow-md md:w-[400px] lg:w-[500px] rounded-[50px] space-y-3  bg-white p-28 w-1/2 h-1/2 border-2  my-32 mx-auto">
           <h1 className="font-bold text-[#196C84]  text-3xl">Sign In</h1>
           <input
@@ -38,6 +39,7 @@ export default function signin() {
           </p>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
