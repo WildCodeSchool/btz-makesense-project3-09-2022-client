@@ -1,11 +1,12 @@
-import React from "react";
+
 import Card from "./components/Card";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div>
-      <Navbar />
+    <div className="h-screen w-screen">
+    <Navbar />
 
       <h1 className="font-bold ml-2">Decisions started</h1>
       <div className="bg-[#196C84]">
@@ -27,6 +28,10 @@ export default function Home() {
         <Card />
         <Card />
       </div>
+
+      <Footer />
+
+
     </div>
   );
 }
