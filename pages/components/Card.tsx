@@ -9,6 +9,8 @@ export default function Card() {
             className="border-[#267a50] w-20 h-6 rounded-lg m-2 border-solid border-2 bg-[#70AF90] opacity-80"
 
 
+
+
           >
             status
           </button>

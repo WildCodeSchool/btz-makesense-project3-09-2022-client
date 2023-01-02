@@ -7,7 +7,11 @@ export default function Home() {
   return (
     <div className="h-screen w-screen">
 
+
       <Navbar />
+
+
+
 
       <h1 className="font-bold ml-2">Decisions started</h1>
       <div className="bg-[#196C84]">
@@ -31,6 +35,10 @@ export default function Home() {
       </div>
 
       <Footer />
+
+
+
+
 
     </div>
   );
