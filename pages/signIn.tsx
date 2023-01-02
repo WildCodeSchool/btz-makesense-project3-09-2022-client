@@ -9,7 +9,9 @@ export default function signin() {
       <Navbar1 />
       <div className="w-screen h-[86%] bg-[#196C84] py-10">
         <div className="flex  flex-col  justify-center align-middle items-center shadow-md md:w-[400px] lg:w-[500px] rounded-[50px] space-y-3  bg-white p-28 w-1/2 h-1/2 border-2  my-32 mx-auto">
-          <h1 className="font-bold text-[#196C84]  text-3xl">Sign In</h1>
+          <h1 className="font-bold text-[#196C84] text-3xl min-w-[200px] text-center">
+            Sign In
+          </h1>
           <input
             type="text"
             id="email"
@@ -24,8 +26,8 @@ export default function signin() {
             placeholder="Mot de passe"
             className="min-w-[200px] w-full h-6 border-b border-b-black "
           />{" "}
-          <p className="text-xs text-right w-full">
-            <Link href="./renewPassword">Mot de passe oubliéé?</Link>
+          <p className="text-xs w-full min-w-[200px] text-center md:text-right">
+            <Link href="./renewPassword">Forgot password?</Link>
           </p>
           <button
             type="button"
@@ -34,7 +36,7 @@ export default function signin() {
             {" "}
             Sign In
           </button>
-          <p>
+          <p className="min-w-[200px] text-center">
             <Link href="./signUp">Sign Up</Link>
           </p>
         </div>
