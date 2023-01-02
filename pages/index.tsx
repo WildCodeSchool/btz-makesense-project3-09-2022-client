@@ -1,3 +1,4 @@
+
 import Card from "./components/Card";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -5,6 +6,7 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <div className="h-screen w-screen">
+
       <Navbar />
 
       <h1 className="font-bold ml-2">Decisions started</h1>
@@ -27,7 +29,9 @@ export default function Home() {
         <Card />
         <Card />
       </div>
+
       <Footer />
+
     </div>
   );
 }

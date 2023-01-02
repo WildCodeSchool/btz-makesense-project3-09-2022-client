@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaHome } from "react-icons/fa";
@@ -47,6 +48,7 @@ export default function Navbar() {
           />
           sense
         </h1>
+
         {width > 768 && (
           <>
             <div className=" xs:hidden sm:hidden  md:flex flex-col justify-center align-middle items-center ">
@@ -90,6 +92,7 @@ export default function Navbar() {
             <CgProfile />
           </Link>
         </div>
+
       </div>
     </div>
   );

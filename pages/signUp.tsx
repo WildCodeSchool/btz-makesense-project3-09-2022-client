@@ -1,10 +1,11 @@
 import React, { useState, ChangeEvent } from "react";
 import axios from "axios";
 import Navbar1 from "./components/Navbar1";
+
 import Footer from "./components/Footer";
 
 export default function signUp() {
-  const [formState, setFormState] = useState({
+ const [formState, setFormState] = useState({
     firstName: "",
     lastName: "",
 
@@ -32,10 +33,11 @@ export default function signUp() {
   };
 
   return (
+
     <div className="w-screen h-screen">
       <Navbar1 />
       <div className="w-screen h-[86%] bg-[#70AF90] py-10">
-        <div className="flex  flex-col  justify-center align-middle items-center shadow-md  rounded-[50px] space-y-3  bg-white p-28 w-1/2 md:w-[400px] h-1/2 border-2  my-32 mx-auto lg:w-[500px]">
+       <div className="flex  flex-col  justify-center align-middle items-center shadow-md  rounded-[50px] space-y-3  bg-white p-28 w-1/2 md:w-[400px] h-1/2 border-2  my-32 mx-auto lg:w-[500px]">
           <h1 className="font-bold text-[#70AF90]  text-3xl">SignUp</h1>
           <input
             onChange={handleChange}
@@ -83,7 +85,9 @@ export default function signUp() {
           </button>
         </div>
       </div>
+
       <Footer />
+
     </div>
   );
 }

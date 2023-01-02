@@ -2,8 +2,10 @@ import React from "react";
 
 export default function Navbar1() {
   return (
+
     <div className="h-[7%] w-full bg-white">
-      <div className="flex justify-end ">
+
+  "flex justify-end ">
         <button type="button" className="font-sans text-xs mr-2">
           FR
         </button>{" "}
