@@ -1,4 +1,8 @@
 
+import Link from "next/link";
+
+
+
 import Card from "./components/Card";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -9,6 +13,16 @@ export default function Home() {
 
 
       <Navbar />
+
+      <div className="flex flex-rox justify-center ">
+        <Link
+          href="/createDecision"
+          className="min-w-[200px] w-[5%] h-15 py-2 text-center bg-[#E36164] rounded-2xl text-white mt-4"
+        >
+          Create a decision
+        </Link>
+      </div>
+
 
 
 
