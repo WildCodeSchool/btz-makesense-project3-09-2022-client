@@ -55,19 +55,19 @@ export default function Navbar() {
         {width > 768 && (
           <>
             <div className=" xs:hidden sm:hidden  md:flex flex-col justify-center align-middle items-center ">
-              <Link href=" ">
+              <Link href="/">
                 <FaHome />
                 <p className="text-xs">Accueil</p>
               </Link>
             </div>
             <div className="sm:hidden  md:flex flex-col justify-center align-middle items-center ">
-              <Link href=" ">
+              <Link href="decisionPage">
                 <AiOutlineCalendar />
                 <p className="text-xs">Mes Décisions</p>{" "}
               </Link>
             </div>
             <div className="sm:hidden md:flex flex-col justify-center align-middle items-center ">
-              <Link href=" ">
+              <Link href="decisionPage">
                 <CiFaceSmile />
                 <p className="text-xs">Notifications</p>{" "}
               </Link>
