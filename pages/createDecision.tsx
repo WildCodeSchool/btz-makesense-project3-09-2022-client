@@ -1,8 +1,11 @@
-import React from "react";
+import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Editor from "./components/Editor";
 
 export default function createDecision() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [value, setValue] = useState<string | undefined>("**Hello world!!!**");
   return (
     <div className="w-screen h-full flex flex-col justify-between">
       <Navbar />
@@ -11,42 +14,46 @@ export default function createDecision() {
           <input
             type="text"
             className=" w-full h-[50px] m-auto rounded-md p-3"
+            placeholder="Title"
           />
-          <textarea
-            id="story"
-            name="story"
-            className=" w-full min-h-[200px] m-auto rounded-md p-3"
-          >
-            It was a dark and stormy night...
-          </textarea>
-          <textarea
-            id="story"
-            name="story"
-            className=" w-full min-h-[200px] m-auto rounded-md p-3"
-          >
-            It was a dark and stormy night...
-          </textarea>
-          <textarea
-            id="story"
-            name="story"
-            className=" w-full min-h-[200px] m-auto rounded-md p-3"
-          >
-            It was a dark and stormy night...
-          </textarea>
-          <textarea
-            id="story"
-            name="story"
-            className=" w-full h-[200px] m-auto rounded-md p-3"
-          >
-            It was a dark and stormy night...
-          </textarea>
-          <textarea
-            id="story"
-            name="story"
-            className=" w-full h-[200px] m-auto rounded-md p-3"
-          >
-            It was a dark and stormy night...
-          </textarea>
+          <div className="container">
+            <p className="text-white font-semibold">Content:</p>
+            <Editor />
+          </div>
+
+          <div className="container">
+            <p className="text-white font-semibold">Impact on organisation:</p>
+            <Editor />
+          </div>
+          <div className="container">
+            <p className="text-white font-semibold">Context around decision:</p>
+            <Editor />
+          </div>
+          <div className="container">
+            <p className="text-white font-semibold">Risks:</p>
+            <Editor />
+          </div>
+          <div className="container">
+            <p className="text-white font-semibold">Benefits:</p>
+            <Editor />
+          </div>
+          <label htmlFor="impacted" className="text-white font-medium">
+            Impacted People:
+            <input
+              type="text"
+              id="impacted"
+              className=" w-full h-[50px] m-auto rounded-md p-3 "
+            />
+          </label>
+          <label htmlFor="deadline" className="text-white font-medium">
+            Deadline:
+            <input
+              type="date"
+              id="deadline"
+              className=" w-full h-[50px] m-auto rounded-md p-3"
+            />
+          </label>
+
           <button
             type="button"
             className="min-w-[200px] w-full h-15 py-2  bg-[#E36164] rounded-2xl text-white"
