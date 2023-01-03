@@ -1,4 +1,8 @@
+
 import Link from "next/link";
+
+
+
 import Card from "./components/Card";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -6,7 +10,10 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <div className="h-screen w-screen">
+
+
       <Navbar />
+
       <div className="flex flex-rox justify-center ">
         <Link
           href="/createDecision"
@@ -15,6 +22,11 @@ export default function Home() {
           Create a decision
         </Link>
       </div>
+
+
+
+
+
       <h1 className="font-bold ml-2">Decisions started</h1>
       <div className="bg-[#196C84]">
         <div className="flex flex-row overflow-x-scroll  pt-2 pb-20">
@@ -35,7 +47,13 @@ export default function Home() {
         <Card />
         <Card />
       </div>
+
       <Footer />
+
+
+
+
+
     </div>
   );
 }
