@@ -38,15 +38,17 @@ export default function Navbar() {
         </button>
       </div>
       <div className="flex flex-row justify-between mt-2 mr-2">
-        <h1 className="font-bold font-sans ml-2 text-3xl">
-          make
-          <button
-            type="button"
-            aria-label="logo design"
-            className="border-solid h-2 w-3 bg-yellow-400 rounded-t-lg"
-          />
-          sense
-        </h1>
+        <Link href="https://www.makesense.org">
+          <h1 className="font-bold font-sans ml-2 text-3xl">
+            make
+            <button
+              type="button"
+              aria-label="logo design"
+              className="border-solid h-2 w-3 bg-yellow-400 rounded-t-lg"
+            />
+            sense
+          </h1>
+        </Link>
         {width > 768 && (
           <>
             <div className=" xs:hidden sm:hidden  md:flex flex-col justify-center align-middle items-center ">
