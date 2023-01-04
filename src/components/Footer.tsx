@@ -11,7 +11,7 @@ export default function Footer() {
         className="ml-2 mr-[20%] md:mr-[30%] lg:mr-[40%]"
         href="https://makesense.org/mentions-legales-donnees-personnelles/"
       >
-        Mentiones Légales
+        Legal Notice
       </Link>
       <div className="flex flex-row items-center ">
         <Link href="https://linktr.ee/makesenseSocialMedia">

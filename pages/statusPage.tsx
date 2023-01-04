@@ -9,7 +9,7 @@ export default function statusPage() {
     <div className=" flex-col justify-between">
       <Navbar />
       <h1 className="text-white pt-5 font-bold text-2xl text-center bg-[#24673A]">
-        {`Statut d'avancement`}
+        Decision status
       </h1>
 
       <div className=" w-screen h-screen flex flex-col md:flex-row justify-around items-center bg-[#24673A]">

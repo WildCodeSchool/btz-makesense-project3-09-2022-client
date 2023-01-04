@@ -12,7 +12,7 @@ export default function Card() {
         </div>
         <h1 className="font-bold">Moving to Paris in spring for 6 months</h1>
         <div className="flex flex-row">
-          <p> par Username</p>
+          <p> by Username</p>
         </div>
       </div>
     </div>

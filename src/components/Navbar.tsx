@@ -52,13 +52,13 @@ export default function Navbar() {
             <div className=" xs:hidden sm:hidden  md:flex flex-col justify-center align-middle items-center ">
               <Link href="/">
                 <FaHome />
-                <p className="text-xs">Accueil</p>
+                <p className="text-xs">Home</p>
               </Link>
             </div>
             <div className="sm:hidden  md:flex flex-col justify-center align-middle items-center ">
               <Link href="decisionPage">
                 <AiOutlineCalendar />
-                <p className="text-xs">Mes Décisions</p>{" "}
+                <p className="text-xs">My Decisions</p>{" "}
               </Link>
             </div>
             <div className="sm:hidden md:flex flex-col justify-center align-middle items-center ">
@@ -86,7 +86,7 @@ export default function Navbar() {
               <AiOutlineClose />
             </button>
           )}
-          <Link href=" ">
+          <Link href="/profile">
             <CgProfile />
           </Link>
         </div>
