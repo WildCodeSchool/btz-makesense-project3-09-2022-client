@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "../src/components/Navbar";
+import Footer from "../src/components/Footer";
 // eslint-disable-next-line import/order
 import { AiOutlineCloudUpload } from "react-icons/ai";
 
