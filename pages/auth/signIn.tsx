@@ -39,7 +39,7 @@ export default function signin() {
               id="email"
               name="email"
               placeholder="email"
-              className="min-w-[200px] w-full h-6 border-b border-b-black "
+              className="min-w-[200px] w-full h-6 border-b border-b-black my-1"
             />
             <input
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -48,10 +48,10 @@ export default function signin() {
               type="text"
               name="password"
               id="password"
-              placeholder="Mot de passe"
-              className="min-w-[200px] w-full h-6 border-b border-b-black "
+              placeholder="password"
+              className="min-w-[200px] w-full h-6 border-b border-b-black my-2"
             />{" "}
-            <p className="text-xs w-full min-w-[200px] text-center md:text-right">
+            <p className="text-xs w-full min-w-[200px] text-center md:text-right my-2">
               <Link href="./renewPassword">Forgot password?</Link>
             </p>
             <button

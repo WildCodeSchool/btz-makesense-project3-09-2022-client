@@ -11,7 +11,7 @@ export default function Status() {
           id="started"
           className="mr-4"
         />
-        Prise de décision commencée
+        Decision started
       </label>
       <label htmlFor="first_decision" className="text-white">
         <input
@@ -21,7 +21,7 @@ export default function Status() {
           className="mr-4"
           id="first_decision"
         />
-        Premiere décision prise
+        First decision made
       </label>
       <label htmlFor="conflict" className="text-white">
         <input
@@ -31,7 +31,7 @@ export default function Status() {
           className="mr-4"
           id="conflict"
         />
-        Conflit sur la décision
+        Conflict over the decision
       </label>
       <label htmlFor="definitive" className="text-white">
         <input
@@ -41,7 +41,7 @@ export default function Status() {
           className="mr-4"
           id="definitive"
         />
-        Décision définitive
+        Definitive decision
       </label>
       <label htmlFor="unreached" className="text-white">
         <input
@@ -51,7 +51,7 @@ export default function Status() {
           className="mr-4"
           id="unreached"
         />
-        Décision non-aboutie
+        Decision unreached
       </label>
       <label htmlFor="finished" className="text-white">
         <input
@@ -61,7 +61,7 @@ export default function Status() {
           className="mr-4"
           id="finished"
         />
-        Décision terminée
+        Decision finished
       </label>
       <button
         type="button"

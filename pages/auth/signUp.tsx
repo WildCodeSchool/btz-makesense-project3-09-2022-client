@@ -43,7 +43,7 @@ export default function signUp() {
             id="firstName"
             name="firstName"
             value={formState.firstName}
-            placeholder="Prénom"
+            placeholder="first name"
             className="min-w-[200px] w-full h-6 border-b border-b-black "
           />
           <input
@@ -52,7 +52,7 @@ export default function signUp() {
             name="lastName"
             value={formState.lastName}
             id="lastName"
-            placeholder="Nom"
+            placeholder="last name"
             className=" min-w-[200px] w-full h-6 border-b border-b-black "
           />{" "}
           <input
@@ -61,7 +61,7 @@ export default function signUp() {
             name="email"
             value={formState.email}
             id="email"
-            placeholder="Email"
+            placeholder="email"
             className="min-w-[200px] w-full h-6 border-b border-b-black "
           />{" "}
           <input
@@ -70,7 +70,7 @@ export default function signUp() {
             name="password"
             value={formState.password}
             id="password"
-            placeholder="Mot de passe"
+            placeholder="password"
             className="min-w-[200px] w-full h-6 border-b border-b-black "
           />{" "}
           <button
