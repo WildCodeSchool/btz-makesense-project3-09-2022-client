@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Editor from "./components/Editor";
+import Navbar from "../src/components/Navbar";
+import Footer from "../src/components/Footer";
+import Editor from "../src/components/Editor";
 
 export default function createDecision() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

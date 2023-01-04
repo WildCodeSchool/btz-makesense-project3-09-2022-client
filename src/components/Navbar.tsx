@@ -68,7 +68,7 @@ export default function Navbar() {
               </Link>
             </div>
             <div className="sm:hidden  md:flex flex-col justify-center align-middle items-center ">
-              <Link href="signIn">
+              <Link href="/auth/signIn">
                 <AiOutlineLogout />
 
                 <p className="text-xs">Log out</p>
