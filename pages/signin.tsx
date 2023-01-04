@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Navbar1 from "./components/Navbar1";
+import Navbar1 from "../src/components/Navbar";
 
 export default function signin() {
   return (
