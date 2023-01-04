@@ -6,11 +6,13 @@
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.
  * This is especially useful for Docker builds.
  */
+import removeImports from "next-remove-imports";
 
+const remove = removeImports();
 !process.env.SKIP_ENV_VALIDATION && (await import("./config/server.mjs"));
 
 /** @type {import("next").NextConfig} */
-const config = {
+const config = remove({
   reactStrictMode: true,
   swcMinify: true,
   i18n: {
@@ -25,6 +27,6 @@ const config = {
       },
     ],
   },
-};
+});
 
 export default config;

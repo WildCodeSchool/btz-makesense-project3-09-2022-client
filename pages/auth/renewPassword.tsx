@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import Navbar1 from "./components/Navbar1";
-import Footer from "./components/Footer";
+import Navbar from "../../src/components/Navbar";
+import Footer from "../../src/components/Footer";
 
 export default function renewPassword() {
   return (
     <div className="w-screen h-screen">
-      <Navbar1 />
-      <div className="w-screen h-[86%] bg-[#196C84] py-10">
+      <Navbar />
+      <div className="w-screen h-[86%] bg-[#196C84] mt-2 py-10">
         <div className="flex  flex-col  justify-around align-middle items-center shadow-md md:w-[400px] lg:w-[500px] rounded-[50px] space-y-3  bg-white  w-1/2 h-[50%] border-2  p-5  md:p-10 lg:p-16 my-32 mx-auto">
           <h1 className="font-bold text-[#196C84]  text-xl ">
             Réinitialisation du mot de passe
