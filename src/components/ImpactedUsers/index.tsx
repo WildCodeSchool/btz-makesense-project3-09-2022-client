@@ -69,15 +69,20 @@ export default function ImpactedUsers({
   return (
     <div className="flex flex-col">
       {impactedUsers.map((user) => (
-        <div className="flex w-full">
-          <div>{user.firstName}</div>
+        <div className="flex w-full bg-[#063944] justify-center">
+          <div className="text-white ">{user.firstName} : Expert ? </div>
           <input
+            className="mx-2"
             onChange={() => handleCheckBox(user)}
             checked={user.isExpert}
             type="checkbox"
           />
-          <button type="button" onClick={() => handleRemoveUser(user)}>
-            X
+          <button
+            type="button"
+            onClick={() => handleRemoveUser(user)}
+            className="w-16 h-5 bg-red-500 text-white rounded-md"
+          >
+            Remove
           </button>
         </div>
       ))}
