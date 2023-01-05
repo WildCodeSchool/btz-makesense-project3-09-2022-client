@@ -1,4 +1,10 @@
-export default function Card() {
+import { IDecisiontWithUser } from "../types/main";
+
+type Props = {
+  decision: IDecisiontWithUser;
+};
+
+export default function Card({ decision }: Props) {
   return (
     <div className=" mx-4 min-w-[250px] h-[200px]  rounded-[10px] p-1 border-2 border-x-gray-400 bg-white">
       <div>
@@ -10,9 +16,12 @@ export default function Card() {
             status
           </button>
         </div>
-        <h1 className="font-bold">Moving to Paris in spring for 6 months</h1>
+        <h1 className="font-bold">{decision.title}</h1>
         <div className="flex flex-row">
-          <p> by Username</p>
+          <p className="mr-1">By </p>{" "}
+          <p>
+            {decision.user.firstName} {decision.user.lastName}
+          </p>
         </div>
       </div>
     </div>

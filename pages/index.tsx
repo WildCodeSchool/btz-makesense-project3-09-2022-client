@@ -1,9 +1,24 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
+
 import Card from "../src/components/Card";
 import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
+import axiosInstance from "../util/axiosInstances";
+import { IDecisiontWithUser } from "../src/types/main";
 
 export default function Home() {
+  const [decisions, setDecisions] = useState<IDecisiontWithUser[]>([]);
+
+  const getDecisions = async () => {
+    const { data } = await axiosInstance("/decisions?user=include");
+    setDecisions(data);
+  };
+
+  useEffect(() => {
+    getDecisions();
+  }, []);
+
   return (
     <div className="h-screen w-screen">
       <Navbar />
@@ -18,22 +33,22 @@ export default function Home() {
       <h1 className="font-bold ml-2">Decisions started</h1>
       <div className="bg-[#196C84]">
         <div className="flex flex-row overflow-x-scroll  pt-2 pb-20">
-          <Card /> <Card /> <Card />
-          <Card />
-          <Card />
+          {decisions.map((decision) => (
+            <Card decision={decision} />
+          ))}
         </div>
         <h1 className="font-bold text-white ml-2">First decisions made</h1>
         <div className="flex flex-row overflow-x-scroll pt-2 pb-20">
-          <Card /> <Card /> <Card />
+          {/* <Card />
           <Card />
-          <Card />
+          <Card /> */}
         </div>
       </div>
       <h1 className="font-bold text-black ml-2">Final decisions made</h1>
       <div className="flex flex-row overflow-x-scroll pt-2 pb-20">
-        <Card /> <Card /> <Card />
+        {/* <Card />
         <Card />
-        <Card />
+        <Card /> */}
       </div>
       <Footer />
     </div>
