@@ -1,7 +1,9 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable import/no-extraneous-dependencies */
 import dynamic from "next/dynamic";
-import { useState } from "react";
 import "@uiw/react-md-editor/markdown-editor.css";
+import { Dispatch, SetStateAction } from "react";
+import { TDecisionState } from "../../pages/createDecision";
 import "@uiw/react-markdown-preview/markdown.css";
 
 const MarkDownEditor = dynamic(
@@ -12,9 +14,24 @@ const MarkDownEditor = dynamic(
   }
 );
 
-export default function Editor() {
-  const [value, setValue] = useState("Type your text here");
+interface IProps {
+  value: string;
+  setValue: Dispatch<SetStateAction<TDecisionState>>;
+  name: keyof TDecisionState;
+}
+
+export default function Editor({ value, setValue, name }: IProps) {
+  const handleChange = (newValue: string) => {
+    setValue((prevState) => ({
+      ...prevState,
+      [name]: newValue,
+    }));
+  };
+
   return (
-    <MarkDownEditor value={value} onChange={(val) => setValue(val as string)} />
+    <MarkDownEditor
+      value={value}
+      onChange={(val) => handleChange(val as string)}
+    />
   );
 }
