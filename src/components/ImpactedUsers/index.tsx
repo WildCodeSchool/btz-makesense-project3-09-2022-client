@@ -1,0 +1,106 @@
+import { divider } from "@uiw/react-md-editor";
+import React, {
+  ChangeEvent,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
+import axiosInstance from "../../../util/axiosInstances";
+import { ImpactedUser, User } from "../../types/main";
+
+type Props = {
+  impactedUsers: ImpactedUser[];
+  setImpactedUsers: Dispatch<SetStateAction<ImpactedUser[]>>;
+};
+
+export default function ImpactedUsers({
+  impactedUsers,
+  setImpactedUsers,
+}: Props) {
+  const [users, setUsers] = useState<User[]>([]);
+  const [input, setInput] = useState("");
+
+  const getUsers = async () => {
+    const { data } = await axiosInstance.get("/users");
+    setUsers(data);
+  };
+
+  useEffect(() => {
+    getUsers();
+  }, []);
+
+  const handleAddUser = (user: ImpactedUser) => {
+    setImpactedUsers((prevUsers) => [
+      ...prevUsers,
+      {
+        ...user,
+        isExpert: false,
+      },
+    ]);
+  };
+
+  const handleRemoveUser = (user: ImpactedUser) => {
+    const userIndex = impactedUsers.findIndex((u) => u.id === user.id);
+    const impactedUsersCopy = [...impactedUsers];
+    impactedUsersCopy.splice(userIndex, 1);
+    setImpactedUsers(impactedUsersCopy);
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value);
+  };
+
+  const handleCheckBox = (user: ImpactedUser) => {
+    const userToChange = impactedUsers.find((u) => u.id === user.id);
+    const userToChangeIndex = impactedUsers.findIndex((u) => u.id === user.id);
+    const impactedUsersCopy = [...impactedUsers];
+
+    if (userToChange) {
+      const newUser: ImpactedUser = {
+        ...userToChange,
+        isExpert: !userToChange.isExpert,
+      };
+      impactedUsersCopy.splice(userToChangeIndex, 1, newUser);
+      setImpactedUsers(impactedUsersCopy);
+    }
+  };
+
+  return (
+    <div className="flex flex-col">
+      {impactedUsers.map((user) => (
+        <div className="flex w-full">
+          <div>{user.firstName}</div>
+          <input
+            onChange={() => handleCheckBox(user)}
+            checked={user.isExpert}
+            type="checkbox"
+          />
+          <button type="button" onClick={() => handleRemoveUser(user)}>
+            X
+          </button>
+        </div>
+      ))}
+      <input
+        value={input}
+        onChange={handleChange}
+        type="text"
+        placeholder="Enter an email ..."
+      />
+      {users
+        .filter((user) => user.email.includes(input))
+        .filter((user) => {
+          return impactedUsers.findIndex((u) => u.id === user.id) === -1;
+        })
+        .map((user) => (
+          <button
+            className="text-black hover:bg-gray-500 bg-white"
+            type="button"
+            onClick={() => handleAddUser(user)}
+          >
+            <p>{user.email}</p>
+          </button>
+        ))}
+    </div>
+  );
+}

@@ -1,5 +1,7 @@
-import React from "react";
+import axios from "axios";
 
-export default function axiosInstances() {
-  return <div>axiosInstances</div>;
-}
+const axiosInstance = axios.create({
+  baseURL: "http://localhost:4000/api/v1",
+});
+
+export default axiosInstance;

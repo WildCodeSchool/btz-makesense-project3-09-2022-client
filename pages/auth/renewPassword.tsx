@@ -28,7 +28,7 @@ export default function renewPassword() {
             className="w-full h-15 py-2  bg-[#E36164] rounded-2xl text-white"
           >
             {" "}
-            Envoyer
+            Send
           </button>
           <Link href="./signUp">Sign Up</Link>
         </div>
