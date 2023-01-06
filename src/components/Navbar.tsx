@@ -38,7 +38,7 @@ export default function Navbar() {
         </button>
       </div>
       <div className="flex flex-row justify-between mt-2 mr-2">
-        <Link href="https://www.makesense.org">
+        <Link href="/">
           <h1 className="font-bold font-sans ml-2 text-3xl">
             make
             <button

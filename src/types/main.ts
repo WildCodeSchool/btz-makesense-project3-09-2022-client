@@ -21,7 +21,7 @@ export type TDecision = {
   benefits: string;
   details: string;
   risks: string;
-  deadline: Date;
+  deadline: string;
   impact: string;
   context: string;
   userId: string;
