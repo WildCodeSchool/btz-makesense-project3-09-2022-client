@@ -13,7 +13,6 @@ export default function decisionPage() {
         </h1>
         <div className="my-32 flex flex-row  justify-around overflow-x-scroll ">
           <Card />
-          <Card />
         </div>
       </div>
       <Footer />
