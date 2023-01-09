@@ -1,29 +1,24 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { useState, ChangeEvent } from "react";
 import Link from "next/link";
+import { useAuth } from "../../src/context/UserContext";
+
 import Navbar from "../../src/components/Navbar";
 import Footer from "../../src/components/Footer";
 
-async function signIn(credentials: { email: string; password: string }) {
-  return fetch("http://localhost:4080/api/v1/auth/signin", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(credentials),
-  }).then((data) => data.json());
-}
-
 export default function signin() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { signIn } = useAuth();
+  const [credentials, setCredentials] = useState({
+    email: "",
+    password: "",
+  });
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    const token = await signIn({
-      email,
-      password,
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setCredentials({
+      ...credentials,
+      [e.target.name]: e.target.value,
     });
   };
+
   return (
     <div className="w-screen h-screen">
       <Navbar />
@@ -32,9 +27,10 @@ export default function signin() {
           <h1 className="font-bold text-[#196C84] text-3xl min-w-[200px] text-center">
             Sign In
           </h1>
-          <form onSubmit={handleSubmit}>
+          <form>
             <input
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={handleChange}
+              value={credentials.email}
               type="text"
               id="email"
               name="email"
@@ -42,10 +38,9 @@ export default function signin() {
               className="min-w-[200px] w-full h-6 border-b border-b-black my-1"
             />
             <input
-              onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                setPassword(e.target.value)
-              }
-              type="text"
+              onChange={handleChange}
+              value={credentials.password}
+              type="password"
               name="password"
               id="password"
               placeholder="password"
@@ -55,6 +50,12 @@ export default function signin() {
               <Link href="./renewPassword">Forgot password?</Link>
             </p>
             <button
+              onClick={() =>
+                signIn({
+                  email: credentials.email,
+                  password: credentials.password,
+                })
+              }
               type="button"
               className="min-w-[200px] w-full h-15 py-2  bg-[#E36164] rounded-2xl text-white"
             >
