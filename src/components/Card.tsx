@@ -8,7 +8,7 @@ type Props = {
 export default function Card({ decision }: Props) {
   return (
     <Link href={`/decision/${decision.id}`}>
-      <div className=" mx-4 min-w-[250px] h-[200px]  rounded-[10px] p-1 border-2 border-x-gray-400 bg-white">
+      <div className=" mx-4 min-w-[250px] h-[170px]  rounded-[10px] p-1 border-2 border-x-gray-400 bg-white">
         <div>
           <div>
             <button

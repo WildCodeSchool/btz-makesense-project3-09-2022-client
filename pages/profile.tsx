@@ -9,9 +9,9 @@ export default function profil() {
   return (
     <div className="w-screen h-full">
       <Navbar />
-      <div className="w-screen h-full bg-[#C62E43] py-24 items-center justify-center align-middle flex flex-col md:flex-row-reverse  ">
-        <div className="flex flex-col justify-center my-5 mx-5 items-center shadow-md rounded-[50px] space-y-3 bg-white p-24 w-1/2 md:w-[400px]  max-h-[350px] h-1/2 border-2  lg:w-[450px] ">
-          <h1 className="font-bold text-[#C62E43] min-w-[200px] text-center text-3xl">
+      <div className="w-screen h-full bg-[#C62E43] py-24 items-center justify-around align-middle flex flex-col md:flex-row-reverse  ">
+        <div className="flex flex-col justify-center my-5 mx-5 items-center shadow-md rounded-[50px] space-y-3 bg-white py-24 px-16 w-1/2 md:w-[360px]  max-h-[350px] h-1/2 border-2  lg:w-[360px] ">
+          <h1 className="font-bold text-[#C62E43] min-w-[170px] text-center text-3xl">
             My Details
           </h1>
           <input
@@ -19,11 +19,11 @@ export default function profil() {
             id="email"
             name="email"
             placeholder="email"
-            className="w-full h-6 border-b text-left border-b-black min-w-[200px]"
+            className="w-full h-6 border-b text-left border-b-black min-w-[170px]"
           />
           <button
             type="button"
-            className="w-full h-15 py-2 min-w-[200px] bg-[#E36164] rounded-2xl text-white"
+            className="w-full h-15 py-2 min-w-[170px] bg-[#E36164] rounded-2xl text-white"
           >
             {" "}
             Update
@@ -33,19 +33,19 @@ export default function profil() {
             name="password"
             id="password"
             placeholder="password"
-            className="w-full h-6 min-w-[200px] border-b border-b-black "
+            className="w-full h-6 min-w-[170px] border-b border-b-black "
           />
           <input
             type="text"
             name="password"
             id="password"
             placeholder="confirm password"
-            className="w-full h-6 min-w-[200px] border-b border-b-black "
+            className="w-full h-6 min-w-[170px] border-b border-b-black "
           />
 
           <button
             type="button"
-            className="w-full h-15 py-2 min-w-[200px] bg-[#E36164] rounded-2xl text-white"
+            className="w-full h-15 py-2 min-w-[170px] bg-[#E36164] rounded-2xl text-white"
           >
             {" "}
             Update
@@ -54,14 +54,14 @@ export default function profil() {
             <Link href="./">{}</Link>
           </p>
         </div>
-        <div className="flex flex-col justify-center  my-5 mx-5 items-center shadow-md  rounded-[50px] space-y-3 bg-white p-24 w-1/2 md:w-[400px] h-1/2 border-2  max-h-[350px]  lg:w-[450px] ">
+        <div className="flex flex-col justify-center  my-5 mx-5 items-center shadow-md  rounded-[50px] space-y-3 bg-white py-24 px-16 w-1/2 md:w-[360px] h-1/2 border-2  max-h-[350px]  lg:w-[360px] ">
           <h1 className="font-bold text-[#C62E43] text-3xl">Photo</h1>
           <div className="wrapper">
             <AiOutlineCloudUpload size={120} />
           </div>
           <button
             type="button"
-            className="w-full h-15 py-2  bg-[#C62E43] min-w-[200px] rounded-2xl text-white"
+            className="w-full h-15 py-2  bg-[#C62E43] min-w-[170px] rounded-2xl text-white"
           >
             {" "}
             Upload

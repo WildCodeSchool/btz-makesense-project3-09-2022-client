@@ -9,11 +9,13 @@ import {
 import { CiFaceSmile } from "react-icons/ci";
 import { CgProfile } from "react-icons/cg";
 import Link from "next/link";
+import { useAuth } from "../context/UserContext";
 
 import useWindowSize from "../hooks/useWindowSize";
 
 export default function Navbar() {
   const [isMenu, setIsMenu] = useState(false);
+  const { signOut } = useAuth();
 
   const { width } = useWindowSize();
 
@@ -70,11 +72,11 @@ export default function Navbar() {
               </Link>
             </div>
             <div className="sm:hidden  md:flex flex-col justify-center align-middle items-center ">
-              <Link href="/auth/signIn">
+              <button type="button" onClick={() => signOut()}>
                 <AiOutlineLogout />
 
                 <p className="text-xs">Log out</p>
-              </Link>
+              </button>
             </div>
           </>
         )}
