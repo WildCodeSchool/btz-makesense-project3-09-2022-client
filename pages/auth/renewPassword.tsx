@@ -30,7 +30,7 @@ export default function renewPassword() {
             {" "}
             Send
           </button>
-          <Link href="./signUp">Sign Up</Link>
+          <Link href="./signup">Sign Up</Link>
         </div>
       </div>
       <Footer />

@@ -27,7 +27,7 @@ export default function Home() {
         {/* <SideBar /> */}
         <div className="flex flex-row justify-center ">
           <Link
-            href="/createDecision"
+            href="/createdecision"
             className="min-w-[200px] w-[5%] h-15 py-2 text-center bg-[#E36164] rounded-2xl text-white mt-4"
           >
             Create a decision
