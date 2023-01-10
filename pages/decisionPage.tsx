@@ -4,15 +4,16 @@ import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
 import Card from "../src/components/Card";
 import axiosInstance from "../util/axiosInstances";
+import { useAuth } from "../src/context/UserContext";
 
 export default function decisionPage() {
   const [decisions, setDecisions] = useState([]);
+  const { user } = useAuth();
   const getAll = async () => {
     const { data } = await axiosInstance(
-      `/decisions?userId=63168603-df08-46ed-8142-268511b154e0&user=include`
+      `/decisions?userId=${user?.id}&user=include`
     );
     setDecisions(data);
-    console.log(data);
   };
   useEffect(() => {
     getAll();
