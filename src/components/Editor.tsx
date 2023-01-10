@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import "@uiw/react-md-editor/markdown-editor.css";
 import { Dispatch, SetStateAction } from "react";
-import { TDecisionState } from "../../pages/createDecision";
+import { TDecisionState } from "../../pages/createdecision";
 import "@uiw/react-markdown-preview/markdown.css";
 
 const MarkDownEditor = dynamic(

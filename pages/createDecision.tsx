@@ -6,6 +6,7 @@ import Footer from "../src/components/Footer";
 import { ImpactedUser } from "../src/types/main";
 import ImpactedUsers from "../src/components/ImpactedUsers";
 import Editor from "../src/components/Editor";
+import axiosInstance from "../util/axiosInstances";
 
 export type TDecisionState = {
   title: string;
@@ -34,8 +35,8 @@ export default function createDecision() {
     useState<TDecisionState>(defaultDecisionState);
 
   const handleSubmit = () => {
-    axios
-      .post("http://localhost:4000/api/v1/decisions", {
+    axiosInstance
+      .post("/decisions", {
         title: decisionState.title,
         benefits: decisionState.benefits,
         risks: decisionState.risks,
