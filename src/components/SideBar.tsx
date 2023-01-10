@@ -12,10 +12,10 @@ export default function SideBar() {
         </li>
         <li>
           {" "}
-          <Link href="/decisionPage">My Decisions</Link>
+          <Link href="/decisionpage">My Decisions</Link>
         </li>
         <li>
-          <Link href="/"> My Notifications</Link>
+          <Link href="/createdecision"> My Notifications</Link>
         </li>
         <li>
           {" "}
