@@ -52,7 +52,7 @@ export default function signin() {
               className="min-w-[200px] w-full h-6 border-b border-b-black "
             />{" "}
             <p className="text-xs w-full min-w-[200px] text-center md:text-right">
-              <Link href="./renewPassword">Forgot password?</Link>
+              <Link href="./renewpassword">Forgot password?</Link>
             </p>
             <button
               type="button"
@@ -63,7 +63,7 @@ export default function signin() {
             </button>
           </form>
           <p className="min-w-[200px] text-center">
-            <Link href="./signUp">Sign Up</Link>
+            <Link href="/signup">Sign Up</Link>
           </p>
         </div>
       </div>
