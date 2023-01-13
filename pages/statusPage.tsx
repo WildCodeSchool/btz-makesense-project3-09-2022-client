@@ -4,12 +4,14 @@ import Navbar from "../src/components/Navbar";
 import Card from "../src/components/Card";
 import Footer from "../src/components/Footer";
 import Status from "../src/components/Status";
+import { useAuth } from "../src/context/UserContext";
 
 export default function statusPage() {
   const [decisions, setDecisions] = useState([]);
+  const { user } = useAuth();
   const getAll = async () => {
     const { data } = await axiosInstance(
-      `/decisions?userId=63168603-df08-46ed-8142-268511b154e0&user=include`
+      `/decisions?userId=${user?.id}&user=include`
     );
     setDecisions(data);
     console.log(data);
@@ -25,7 +27,7 @@ export default function statusPage() {
         Decision status
       </h1>
 
-      <div className=" w-screen h-screen flex flex-col md:flex-row justify-around items-center bg-[#24673A]">
+      <div className=" w-screen h-screen flex-wrap flex flex-col md:flex-row justify-around items-center bg-[#24673A]">
         {decisions.map((dec) => (
           <Card decision={dec} />
         ))}

@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-
 import Link from "next/link";
-
 import Card from "../src/components/Card";
 import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";

@@ -60,13 +60,13 @@ export default function Navbar() {
               </Link>
             </div>
             <div className="sm:hidden  md:flex flex-col justify-center align-middle items-center ">
-              <Link href="decisionPage">
+              <Link href="/decisionpage">
                 <AiOutlineCalendar />
                 <p className="text-xs">My Decisions</p>{" "}
               </Link>
             </div>
             <div className="sm:hidden md:flex flex-col justify-center align-middle items-center ">
-              <Link href="decisionPage">
+              <Link href="/statuspage">
                 <CiFaceSmile />
                 <p className="text-xs">Notifications</p>{" "}
               </Link>
