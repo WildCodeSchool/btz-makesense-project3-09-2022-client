@@ -12,6 +12,7 @@ import Link from "next/link";
 import { useAuth } from "../context/UserContext";
 
 import useWindowSize from "../hooks/useWindowSize";
+import SideBar from "./SideBar";
 
 export default function Navbar() {
   const [isMenu, setIsMenu] = useState(false);
@@ -95,6 +96,7 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
+      {isMenu && <SideBar />}
     </div>
   );
 }

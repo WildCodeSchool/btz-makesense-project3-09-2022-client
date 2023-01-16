@@ -11,12 +11,22 @@ export default function Card({ decision }: Props) {
       <div className=" mx-4 min-w-[250px] h-[170px]  rounded-[10px] p-1 border-2 border-x-gray-400 bg-white">
         <div>
           <div>
-            <button
-              type="button"
-              className="border-[#267a50] w-20 h-6 rounded-lg m-2 border-solid border-2 bg-[#70AF90] opacity-80"
-            >
-              status
-            </button>
+            <div className="flex flex-row">
+              <Link href="./statuspage">
+                <button
+                  type="button"
+                  className="border-[#196C84]  text-[#196C84] text-xs  font-semibold w-48 h-6 rounded-[50px] m-2 border-solid border-2 bg-[rgb(225,239,242)] "
+                >
+                  status
+                </button>
+              </Link>
+              <button
+                type="button"
+                className="border-[#E36164] w-24 h-6 text-[#E36164] text-xs font-semibold rounded-[50px] m-2 border-solid border-2 bg-[rgb(245,229,239)] "
+              >
+                Hub France
+              </button>
+            </div>
           </div>
           <h1 className="font-bold">{decision.title}</h1>
           <div className="flex flex-row">

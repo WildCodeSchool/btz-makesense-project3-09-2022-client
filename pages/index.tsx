@@ -5,6 +5,7 @@ import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
 import axiosInstance from "../util/axiosInstances";
 import { IDecisiontWithUser } from "../src/types/main";
+import SideBar from "../src/components/SideBar";
 
 export default function Home() {
   const [decisions, setDecisions] = useState<IDecisiontWithUser[]>([]);
@@ -22,7 +23,6 @@ export default function Home() {
     <div>
       <Navbar />
       <div className="h-screen w-screen">
-        {/* <SideBar /> */}
         <div className="flex flex-row justify-center ">
           <Link
             href="/createdecision"
