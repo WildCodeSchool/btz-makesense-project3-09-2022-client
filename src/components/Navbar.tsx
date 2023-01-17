@@ -12,6 +12,7 @@ import Link from "next/link";
 import { useAuth } from "../context/UserContext";
 
 import useWindowSize from "../hooks/useWindowSize";
+import SideBar from "./SideBar";
 
 export default function Navbar() {
   const [isMenu, setIsMenu] = useState(false);
@@ -27,7 +28,7 @@ export default function Navbar() {
     }
   }, [width]);
   return (
-    <div className="h-[7%] w-full bg-white">
+    <div className="h-[7%]   w-full bg-white">
       <div className="flex justify-end ">
         <button type="button" className="font-sans text-xs mr-2">
           FR
@@ -95,6 +96,7 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
+      {isMenu && <SideBar />}
     </div>
   );
 }
