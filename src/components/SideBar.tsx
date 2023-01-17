@@ -1,7 +1,9 @@
 import React from "react";
 import Link from "next/link";
+import { useAuth } from "../context/UserContext";
 
 export default function SideBar() {
+  const { signOut } = useAuth();
   return (
     <div className="h-[300px] absolute right-0 z-50 w-1/4 float-right  bg-[#063944] rounded-l-[70px] flex flex-col justify-around items-end pr-5 text-lg text-yellow-400">
       <ul>
@@ -10,18 +12,20 @@ export default function SideBar() {
         </li>
         <li>
           {" "}
-          <Link href="/">My Projects</Link>
+          <Link href="/decisionpage">My Decisions</Link>
         </li>
         <li>
-          <Link href="/"> My Notifications</Link>
-        </li>
-        <li>
-          {" "}
-          <Link href="/"> My Profile</Link>
+          <Link href="/createdecision"> My Notifications</Link>
         </li>
         <li>
           {" "}
-          <Link href="/">Log Out</Link>
+          <Link href="/profile"> My Profile</Link>
+        </li>
+        <li>
+          {" "}
+          <button type="button" onClick={() => signOut()}>
+            Log Out
+          </button>
         </li>
       </ul>
     </div>
