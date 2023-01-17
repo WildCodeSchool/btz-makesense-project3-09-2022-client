@@ -1,23 +1,47 @@
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { IDecisiontWithUser } from "../types/main";
+import { IDecisiontWithUser, TStatus } from "../types/main";
+import axiosInstance from "../../util/axiosInstances";
 
 type Props = {
   decision: IDecisiontWithUser;
 };
 
 export default function Card({ decision }: Props) {
+  const [status, setStatus] = useState<TStatus[]>([]);
+
+  const getStatus = async () => {
+    const { data } = await axiosInstance.get(
+      `/status?decisionId=${decision.id}`
+    );
+    setStatus(data);
+  };
+
+  useEffect(() => {
+    getStatus();
+  }, []);
+
+  const lastStatus = status
+    .filter((s) => !!s.content)
+    .sort((a, b) => {
+      if (a.order < b.order) {
+        return 1;
+      }
+      return -1;
+    })[0];
+
   return (
     <Link href={`/decision/${decision.id}`}>
       <div className=" mx-4 min-w-[250px] h-[170px]  rounded-[10px] p-1 border-2 border-x-gray-400 bg-white">
         <div>
           <div>
             <div className="flex flex-row">
-              <Link href="./statuspage">
+              <Link href={`/status/${decision.id}`}>
                 <button
                   type="button"
                   className="border-[#196C84]  text-[#196C84] text-xs  font-semibold w-48 h-6 rounded-[50px] m-2 border-solid border-2 bg-[rgb(225,239,242)] "
                 >
-                  status
+                  {lastStatus?.name}
                 </button>
               </Link>
               <button

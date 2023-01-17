@@ -22,6 +22,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
+
       <div className="h-screen w-screen">
         <div className="flex flex-row justify-center ">
           <Link

@@ -10,7 +10,7 @@ export default function decisionPage() {
   const [decisions, setDecisions] = useState([]);
   const { user } = useAuth();
   const getAll = async () => {
-    const { data } = await axiosInstance(
+    const { data } = await axiosInstance.get(
       `/decisions?userId=${user?.id}&user=include`
     );
     setDecisions(data);

@@ -96,7 +96,7 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
-      {isMenu && <SideBar />}
+      {!isMenu && <SideBar />}
     </div>
   );
 }
