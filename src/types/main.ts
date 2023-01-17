@@ -1,3 +1,5 @@
+import { string } from "zod";
+
 export interface User {
   id: string;
   email: string;
@@ -30,3 +32,11 @@ export type TDecision = {
 export interface IDecisiontWithUser extends TDecision {
   user: User;
 }
+
+export type TStatus = {
+  id: string;
+  content: string;
+  decisionId: string;
+  order: number;
+  name: string;
+};

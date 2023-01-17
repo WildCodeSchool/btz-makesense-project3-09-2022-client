@@ -4,12 +4,13 @@
 import dynamic from "next/dynamic";
 import "@uiw/react-md-editor/markdown-editor.css";
 import "@uiw/react-markdown-preview/markdown.css";
+import EditorSkeletton from "./EditorSkeletton";
 
 const MarkDownEditor = dynamic(
   () => import("@uiw/react-md-editor").then((mod) => mod.default),
   {
     ssr: false,
-    loading: () => <div>Loading ...</div>,
+    loading: () => <EditorSkeletton />,
   }
 );
 
@@ -29,6 +30,7 @@ export default function Editor({ value, setValue, name }: IProps) {
 
   return (
     <MarkDownEditor
+      className="min-h-[400px]"
       value={value}
       onChange={(val) => handleChange(val as string)}
     />

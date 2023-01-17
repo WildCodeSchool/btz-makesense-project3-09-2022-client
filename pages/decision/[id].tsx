@@ -15,6 +15,10 @@ type TCommentary = {
   createdAt: string;
 };
 
+type TNewCommentary = {
+  content: "";
+};
+
 export default function Details() {
   const [decision, setDecision] = useState<TDecision>();
   const [commentaries, setCommentaries] = useState<TCommentary[]>([]);
@@ -30,7 +34,9 @@ export default function Details() {
   const [arrow5, setArrow5] = useState(false);
   const [arrow6, setArrow6] = useState(false);
   const [details, setDetails] = useState(false);
-  const [commentary, setCommentary] = useState<string>("");
+  const [commentary, setCommentary] = useState<TNewCommentary>({
+    content: "",
+  });
   const { query } = useRouter();
 
   const [avis, setAvis] = useState(false);
@@ -220,6 +226,7 @@ export default function Details() {
               className="w-3/4 min-h-[200px] bg-gray-100  mx-auto overflow-y-scroll   pl-1"
             >
               <h1>RISKS: {decision.risks}</h1>
+              <PreviewMarkdown value={decision.risks} />
             </div>
           )}
           <div className="w-3/4 h-10 font-bold bg-white border-gray-200 border-y-2 pl-1 mx-auto">
@@ -249,7 +256,8 @@ export default function Details() {
               id="content"
               className="w-3/4 min-h-[200px] bg-gray-100  mx-auto overflow-y-scroll   pl-1"
             >
-              <h1>IMPACT: {decision.impact}</h1>
+              <h1>IMPACT: </h1>
+              <PreviewMarkdown value={decision.impact} />
             </div>
           )}
           <div className="w-3/4 h-10 font-bold bg-white border-gray-200 border-y-2 pl-1 mx-auto">
@@ -279,7 +287,8 @@ export default function Details() {
               id="content"
               className="w-3/4 min-h-[200px] bg-gray-100  mx-auto overflow-y-scroll pl-1"
             >
-              <h1>CONTEXT: {decision.context}</h1>
+              <h1>CONTEXT: </h1>
+              <PreviewMarkdown value={decision.context} />
             </div>
           )}
 
@@ -311,7 +320,7 @@ export default function Details() {
               className="w-3/4 min-h-[200px] bg-gray-100  mx-auto overflow-y-scroll rounded-b-md pl-1"
             >
               {commentaries.map((e) => (
-                <h1>{e.content}</h1>
+                <PreviewMarkdown value={e.content} />
               ))}
             </div>
           )}
@@ -331,8 +340,8 @@ export default function Details() {
               >
                 <Editor
                   name="content"
-                  value={commentary}
-                  setValue={(e) => setCommentary(e)}
+                  value={commentary.content}
+                  setValue={setCommentary}
                 />
               </div>
               <button
