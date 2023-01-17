@@ -1,9 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable import/no-cycle */
 /* eslint-disable import/no-extraneous-dependencies */
 import dynamic from "next/dynamic";
 import "@uiw/react-md-editor/markdown-editor.css";
-import { Dispatch, SetStateAction } from "react";
-import { TDecisionState } from "../../pages/createdecision";
 import "@uiw/react-markdown-preview/markdown.css";
 
 const MarkDownEditor = dynamic(
@@ -16,13 +15,13 @@ const MarkDownEditor = dynamic(
 
 interface IProps {
   value: string;
-  setValue: Dispatch<SetStateAction<TDecisionState>>;
-  name: keyof TDecisionState;
+  setValue: (value: any) => void;
+  name: string;
 }
 
 export default function Editor({ value, setValue, name }: IProps) {
   const handleChange = (newValue: string) => {
-    setValue((prevState) => ({
+    setValue((prevState: any) => ({
       ...prevState,
       [name]: newValue,
     }));

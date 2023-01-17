@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Navbar from "../../src/components/Navbar";
+
 import Footer from "../../src/components/Footer";
 
 export default function renewPassword() {

@@ -1,10 +1,9 @@
-import React from "react";
-
 export default function Status() {
   return (
-    <div className="flex flex-col justify-between space-y-5">
-      <div className="flex flex-col justify-between space-y-4 border-l-[5px] rounded border-solid border-[#F6FC80]">
-        <label htmlFor="started" className="text-white ">
+    <div className=" mr-10 space-y-5  w-[45%] md:w-[35%] lg:w-[25%] ">
+      <h1 className="font-semibold">Status</h1>
+      <div className="flex flex-col justify-between space-y-5 border-l-[5px] rounded border-solid border-[rgb(181,230,60)]">
+        <label htmlFor="started" className="text-black bg-white w-44 rounded">
           <input
             type="radio"
             name="status"
@@ -14,7 +13,10 @@ export default function Status() {
           />
           Decision started
         </label>
-        <label htmlFor="first_decision" className="text-white">
+        <label
+          htmlFor="first_decision"
+          className=" bg-white text-gray-500 w-44 rounded"
+        >
           <input
             type="radio"
             name="status"
@@ -24,7 +26,10 @@ export default function Status() {
           />
           First decision made
         </label>
-        <label htmlFor="conflict" className="text-white">
+        <label
+          htmlFor="conflict"
+          className="text-gray-500 bg-white w-44 rounded"
+        >
           <input
             type="radio"
             name="status"
@@ -34,7 +39,10 @@ export default function Status() {
           />
           Conflict over the decision
         </label>
-        <label htmlFor="definitive" className="text-white">
+        <label
+          htmlFor="definitive"
+          className="text-gray-500 bg-white w-44 rounded"
+        >
           <input
             type="radio"
             name="status"
@@ -44,7 +52,10 @@ export default function Status() {
           />
           Definitive decision
         </label>
-        <label htmlFor="unreached" className="text-white">
+        <label
+          htmlFor="unreached"
+          className="text-gray-500 bg-white w-44 rounded"
+        >
           <input
             type="radio"
             name="status"
@@ -54,7 +65,10 @@ export default function Status() {
           />
           Decision unreached
         </label>
-        <label htmlFor="finished" className="text-white">
+        <label
+          htmlFor="finished"
+          className="text-gray-500 bg-white w-48 rounded"
+        >
           <input
             type="radio"
             name="status"
@@ -65,12 +79,6 @@ export default function Status() {
           Decision finished
         </label>
       </div>
-      <button
-        type="button"
-        className="min-w-[200px] w-full h-15 py-2  bg-[#E36164] rounded-2xl text-white"
-      >
-        Modify
-      </button>
     </div>
   );
 }

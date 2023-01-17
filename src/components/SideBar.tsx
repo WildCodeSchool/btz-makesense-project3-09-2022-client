@@ -5,7 +5,7 @@ import { useAuth } from "../context/UserContext";
 export default function SideBar() {
   const { signOut } = useAuth();
   return (
-    <div className="h-[80%] absolute right-0 w-48 float-right  bg-[#063944] rounded-l-[70px] flex flex-col justify-around items-end pr-5 text-lg text-yellow-400">
+    <div className="h-[300px] absolute right-0 z-50 w-1/4 float-right  bg-[#063944] rounded-l-[70px] flex flex-col justify-around items-end pr-5 text-lg text-yellow-400">
       <ul>
         <li>
           <Link href="/">Home</Link>
