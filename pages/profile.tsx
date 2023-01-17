@@ -51,7 +51,7 @@ export default function profil() {
             Update
           </button>
           <p>
-            <Link href="./">{}</Link>
+            <Link href="/">{}</Link>
           </p>
         </div>
         <div className="flex flex-col justify-center  my-5 mx-5 items-center shadow-md  rounded-[50px] space-y-3 bg-white py-24 px-16 w-1/2 md:w-[360px] h-1/2 border-2  max-h-[350px]  lg:w-[360px] ">

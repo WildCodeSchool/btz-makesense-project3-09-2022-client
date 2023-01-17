@@ -2,7 +2,6 @@ import { useState, ChangeEvent } from "react";
 import Link from "next/link";
 import { useAuth } from "../../src/context/UserContext";
 
-import Navbar from "../../src/components/Navbar";
 import Footer from "../../src/components/Footer";
 
 export default function signin() {
@@ -21,7 +20,30 @@ export default function signin() {
 
   return (
     <div className="w-screen h-screen">
-      <Navbar />
+      <div className="h-[7%] w-full bg-white">
+        <div className="flex justify-end ">
+          <button type="button" className="font-sans text-xs mr-2">
+            FR
+          </button>{" "}
+          <button type="button" className="font-sans text-xs mr-2">
+            EN
+          </button>{" "}
+          <button type="button" className="font-sans text-xs mr-2">
+            ES
+          </button>
+        </div>
+        <div className="flex flex-row justify-between mt-2 mr-2">
+          <h1 className="font-bold font-sans ml-2 text-3xl">
+            make
+            <button
+              type="button"
+              aria-label="logo design"
+              className="border-solid h-2 w-3 bg-yellow-400 rounded-t-lg"
+            />
+            sense
+          </h1>
+        </div>
+      </div>
       <div className="w-screen h-[86%] bg-[#196C84] mt-2 py-10">
         <div className="flex  flex-col  justify-center align-middle items-center shadow-md  rounded-[50px] space-y-3  bg-white p-28 w-1/2 md:w-[400px] h-1/2 border-2  my-32 mx-auto lg:w-[500px]">
           <h1 className="font-bold text-[#196C84] text-3xl min-w-[200px] text-center">

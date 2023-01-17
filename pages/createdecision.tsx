@@ -63,6 +63,7 @@ export default function createDecision() {
   return (
     <div className="w-screen h-full flex flex-col justify-between">
       <Navbar />
+
       <input type="text" />
       <div className="bg-[#24673A] w-screen h-full">
         <form className="w-[60%] flex flex-col m-auto h-full space-y-10 mt-4 mb-4 md:w-[50%]">

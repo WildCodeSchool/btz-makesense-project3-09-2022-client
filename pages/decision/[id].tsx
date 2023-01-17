@@ -267,9 +267,11 @@ export default function Details() {
           id="deadline"
           className="w-3/4 h-12 mt-5 mx-auto bg-white mb-5 rounded-md pl-1"
         >
-          {decision.deadline.substring(8, 10)}/
-          {decision.deadline.substring(5, 7)}/
-          {decision.deadline.substring(0, 4)}
+          <p>
+            DEADLINE: {decision.deadline.substring(8, 10)}/
+            {decision.deadline.substring(5, 7)}/
+            {decision.deadline.substring(0, 4)}
+          </p>
         </div>
       </div>
       <Footer />
