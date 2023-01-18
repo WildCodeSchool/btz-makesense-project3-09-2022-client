@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Navbar from "../../src/components/Navbar";
 import Footer from "../../src/components/Footer";
@@ -107,10 +107,6 @@ export default function Details() {
     if (!details) setDetails(true);
     if (arrow6) setArrow6(false);
     if (!arrow6) setArrow6(true);
-  };
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setCommentary(e.target.value);
   };
 
   const handleSubmit = async () => {
