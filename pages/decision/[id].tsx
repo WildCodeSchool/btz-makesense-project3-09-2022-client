@@ -2,12 +2,13 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Navbar from "../../src/components/Navbar";
 import Footer from "../../src/components/Footer";
-import { TDecision } from "../../src/types/main";
+import { IDecisionWithStatus } from "../../src/types/main";
 import axiosInstance from "../../util/axiosInstances";
 import Editor from "../../src/components/Editor";
 import Status from "../../src/components/Status";
 import ImpactedPeople from "../../src/components/ImpactedPeople";
 import PreviewMarkdown from "../../src/components/PreviewMarkdown";
+import UpdateDecisions from "../../src/components/UpdateDecisions";
 
 type TCommentary = {
   id: string;
@@ -20,7 +21,7 @@ type TNewCommentary = {
 };
 
 export default function Details() {
-  const [decision, setDecision] = useState<TDecision>();
+  const [decision, setDecision] = useState<IDecisionWithStatus>();
   const [commentaries, setCommentaries] = useState<TCommentary[]>([]);
   const [benefits, setBenefits] = useState(false);
   const [risks, setRisks] = useState(false);
@@ -41,22 +42,23 @@ export default function Details() {
 
   const [avis, setAvis] = useState(false);
 
-  const getDecision = async () => {
-    const { data } = await axiosInstance.get(`/decisions/${query.id}`);
-    setDecision(data);
-  };
-
   const getCommentaries = async () => {
     const { data } = await axiosInstance.get(
       `/commentaries?decisionId=${query.id}`
     );
     setCommentaries(data);
   };
+  const getDecisionWithStatus = async () => {
+    const { data } = await axiosInstance.get(
+      `/decisions/${query.id}?status=include`
+    );
+    setDecision(data);
+  };
 
   useEffect(() => {
     if (query.id) {
-      getDecision();
       getCommentaries();
+      getDecisionWithStatus();
     }
   }, [query]);
 
@@ -118,6 +120,15 @@ export default function Details() {
     });
   };
 
+  const lastStatus = decision?.status
+    .filter((s) => !!s.content)
+    .sort((a, b) => {
+      if (a.order < b.order) {
+        return 1;
+      }
+      return -1;
+    })[0];
+
   if (!decision) return <div>No decision</div>;
 
   return (
@@ -138,7 +149,7 @@ export default function Details() {
                 type="button"
                 className="border-[#196C84]  text-[#196C84] text-xs  font-semibold w-40 h-6 rounded-[50px] m-2 border-solid border-2 bg-[rgb(225,239,242)]  "
               >
-                status
+                {lastStatus!.name}
               </button>
               <button
                 type="button"
@@ -317,13 +328,14 @@ export default function Details() {
           {avis && (
             <div
               id="content"
-              className="w-3/4 min-h-[200px] bg-gray-100  mx-auto overflow-y-scroll rounded-b-md pl-1"
+              className="w-3/4 min-h-[200px] bg-gray-100  mx-auto overflow-y-scroll  pl-1"
             >
               {commentaries.map((e) => (
                 <PreviewMarkdown value={e.content} />
               ))}
             </div>
           )}
+          <UpdateDecisions />
 
           <button
             type="button"
@@ -344,6 +356,7 @@ export default function Details() {
                   setValue={setCommentary}
                 />
               </div>
+
               <button
                 type="button"
                 onClick={handleSubmit}
