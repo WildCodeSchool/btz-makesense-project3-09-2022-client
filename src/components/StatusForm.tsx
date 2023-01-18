@@ -23,13 +23,17 @@ export default function StatusForm({ name, status }: Props) {
 
   return (
     <div className="w-full">
-      <p className="text-white font-semibold">{status.name}:</p>
+      <p className="text-[#C1E94E] font-bold text-lg m-1">{status.name} :</p>
       <Editor
         name={name}
         value={value[status.name] as string}
         setValue={setValue}
       />
-      <button type="button" onClick={handleSubmit}>
+      <button
+        type="button"
+        onClick={handleSubmit}
+        className="min-w-[200px] w-32 h-15 py-2 my-2 bg-[#E36164] rounded-2xl text-white"
+      >
         SUBMIT
       </button>
     </div>
