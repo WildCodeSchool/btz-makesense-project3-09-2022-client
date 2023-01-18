@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Navbar from "../../src/components/Navbar";
-import SideBar from "../../src/components/SideBar";
+
 import Editor from "../../src/components/Editor";
 import axiosInstance from "../../util/axiosInstances";
 import Status from "../../src/components/Status";
@@ -38,9 +38,9 @@ export default function MyDecisionStatus() {
   }, [query]);
 
   return (
-    <div className="w-screen full bg-slate-400">
+    <div className="w-screen full  bg-[#196C84]">
       <Navbar />
-      <div className="flex flex-row">
+      <div className="flex flex-row pl-5">
         <Status />
         <div className="flex w-full pr-40 flex-col">
           {decision?.status

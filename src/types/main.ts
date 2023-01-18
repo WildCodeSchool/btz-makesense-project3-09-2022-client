@@ -40,3 +40,7 @@ export type TStatus = {
   order: number;
   name: string;
 };
+
+export interface IDecisionWithStatus extends TDecision {
+  status: TStatus[];
+}
