@@ -5,7 +5,7 @@ import Footer from "../../src/components/Footer";
 import { IDecisionWithStatus } from "../../src/types/main";
 import axiosInstance from "../../util/axiosInstances";
 import Editor from "../../src/components/Editor";
-import Status from "../../src/components/Status";
+import StatusBar from "../../src/components/StatusBar";
 import ImpactedPeople from "../../src/components/ImpactedPeople";
 import PreviewMarkdown from "../../src/components/PreviewMarkdown";
 import UpdateDecisions from "../../src/components/UpdateDecisions";
@@ -132,7 +132,7 @@ export default function Details() {
       <Navbar />
       <div className="flex flex-col-reverse  md:flex-row-reverse ">
         <div className="flex md:flex-col justify-start items-start p-5 space-y-3 ">
-          <Status />
+          <StatusBar />
           <ImpactedPeople />
         </div>
         <div className="overflow-y-scroll flex flex-col w-screen h-screen  bg-[#196C84] mt-3">
