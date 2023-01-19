@@ -15,7 +15,7 @@ export default function SideBar() {
           <Link href="/decisionpage">My Decisions</Link>
         </li>
         <li>
-          <Link href="/createdecision"> My Notifications</Link>
+          <Link href="/statuspage"> My Notifications</Link>
         </li>
         <li>
           {" "}

@@ -10,7 +10,7 @@ export default function decisionPage() {
   const [decisions, setDecisions] = useState([]);
   const { user } = useAuth();
   const getAll = async () => {
-    const { data } = await axiosInstance.get(
+    const { data } = await axiosInstance(
       `/decisions?userId=${user?.id}&user=include`
     );
     setDecisions(data);
@@ -18,19 +18,18 @@ export default function decisionPage() {
   useEffect(() => {
     getAll();
   }, []);
-  return (
-    <div>
-      <Navbar />
 
-      <div className="w-screen h-screen bg-[#24673A]">
-        <h1 className="text-white font-bold text-2xl text-center pt-10 pb-10">
-          My Decisions
-        </h1>
-        <div className="my-32 flex flex-row  justify-around overflow-x-scroll ">
-          {decisions.map((dec) => (
-            <Card decision={dec} />
-          ))}
-        </div>
+  return (
+    <div className=" flex-col justify-between">
+      <Navbar />
+      <h1 className="text-white pt-5 font-bold text-2xl text-center bg-[#24673A]">
+        My Decisions
+      </h1>
+
+      <div className=" w-screen h-screen flex-wrap flex flex-col md:flex-row justify-around items-center bg-[#24673A]">
+        {decisions.map((dec) => (
+          <Card decision={dec} />
+        ))}
       </div>
       <Footer />
     </div>
