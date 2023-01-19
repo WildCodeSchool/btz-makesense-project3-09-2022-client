@@ -1,21 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Navbar from "../../src/components/Navbar";
-
-import Editor from "../../src/components/Editor";
 import axiosInstance from "../../util/axiosInstances";
-import Status from "../../src/components/Status";
+import StatusBar from "../../src/components/StatusBar";
 import { TDecision, TStatus } from "../../src/types/main";
 import StatusForm from "../../src/components/StatusForm";
 import Footer from "../../src/components/Footer";
-
-const defaultDecisionStatus = {
-  id: "",
-  content: "",
-  decisionId: "",
-  order: 1,
-  name: "",
-};
+import ImpactedPeople from "../../src/components/ImpactedPeople";
 
 export default function MyDecisionStatus() {
   const { query } = useRouter();
@@ -40,9 +31,12 @@ export default function MyDecisionStatus() {
   return (
     <div className="w-screen full  bg-[#196C84]">
       <Navbar />
-      <div className="flex flex-row pl-5">
-        <Status />
-        <div className="flex w-full pr-40 flex-col">
+      <div className="flex flex-col md:flex-row  gap-5 justify-between">
+        <div className="flex flex-row bg-white justify-start gap-10 pl-3 pb-1 md:flex-col">
+          <StatusBar />
+          <ImpactedPeople />
+        </div>
+        <div className="flex w-full px-5 md:pr-28 flex-col">
           {decision?.status
             .sort((a, b) => {
               if (a.order > b.order) {

@@ -3,7 +3,7 @@ import axiosInstance from "../util/axiosInstances";
 import Navbar from "../src/components/Navbar";
 import Card from "../src/components/Card";
 import Footer from "../src/components/Footer";
-import Status from "../src/components/Status";
+
 import { useAuth } from "../src/context/UserContext";
 
 export default function statusPage() {
@@ -31,9 +31,6 @@ export default function statusPage() {
         {decisions.map((dec) => (
           <Card decision={dec} />
         ))}
-        <div className="flex flex-col justify-between space-y-5">
-          <Status />
-        </div>
       </div>
       <Footer />
     </div>

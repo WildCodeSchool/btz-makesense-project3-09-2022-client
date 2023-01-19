@@ -14,6 +14,7 @@ export default function Card({ decision }: Props) {
     const { data } = await axiosInstance.get(
       `/status?decisionId=${decision.id}`
     );
+
     setStatus(data);
   };
 
