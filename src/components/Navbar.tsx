@@ -56,25 +56,25 @@ export default function Navbar() {
           <>
             <div className=" xs:hidden sm:hidden  md:flex flex-col justify-center align-middle items-center ">
               <Link href="/">
-                <FaHome />
+                <FaHome className="m-auto" />
                 <p className="text-xs">Home</p>
               </Link>
             </div>
             <div className="sm:hidden  md:flex flex-col justify-center align-middle items-center ">
               <Link href="/decisionpage">
-                <AiOutlineCalendar />
+                <AiOutlineCalendar className="m-auto" />
                 <p className="text-xs">My Decisions</p>{" "}
               </Link>
             </div>
             <div className="sm:hidden md:flex flex-col justify-center align-middle items-center ">
               <Link href="/statuspage">
-                <CiFaceSmile />
+                <CiFaceSmile className="m-auto" />
                 <p className="text-xs">Notifications</p>{" "}
               </Link>
             </div>
             <div className="sm:hidden  md:flex flex-col justify-center align-middle items-center ">
               <button type="button" onClick={() => signOut()}>
-                <AiOutlineLogout />
+                <AiOutlineLogout className="m-auto" />
 
                 <p className="text-xs">Log out</p>
               </button>
@@ -82,17 +82,19 @@ export default function Navbar() {
           </>
         )}
         <div className="h-10 w-10 flex flex-row  items-center">
-          {isMenu ? (
+          {width < 768 && isMenu && (
             <button type="button" onClick={() => setIsMenu(false)}>
               <RxHamburgerMenu />
             </button>
-          ) : (
+          )}
+          {width < 768 && !isMenu && (
             <button type="button" onClick={() => setIsMenu(true)}>
               <AiOutlineClose />
             </button>
           )}
           <Link href="/profile">
-            <CgProfile />
+            <CgProfile className="m-auto" />{" "}
+            {width > 768 && <p className="text-xs ">Profile</p>}
           </Link>
         </div>
       </div>

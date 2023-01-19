@@ -69,7 +69,7 @@ export default function ImpactedUsers({
   return (
     <div className="flex flex-col">
       {impactedUsers.map((user) => (
-        <div className="flex w-full bg-[#063944] justify-center">
+        <div className="flex w-full bg-[#063944]  justify-center">
           <div className="text-white ">{user.firstName} : Expert ? </div>
           <input
             className="mx-2"
@@ -80,32 +80,42 @@ export default function ImpactedUsers({
           <button
             type="button"
             onClick={() => handleRemoveUser(user)}
-            className="w-16 h-5 bg-red-500 text-white rounded-md"
+            className="w-16 h-5 bg-red-500 my-1 text-white rounded-md"
           >
             Remove
           </button>
         </div>
       ))}
-      <input
-        value={input}
-        onChange={handleChange}
-        type="text"
-        placeholder="Enter an email ..."
-      />
-      {users
-        .filter((user) => user.email.includes(input))
-        .filter((user) => {
-          return impactedUsers.findIndex((u) => u.id === user.id) === -1;
-        })
-        .map((user) => (
-          <button
-            className="text-black hover:bg-gray-500 bg-white"
-            type="button"
-            onClick={() => handleAddUser(user)}
-          >
-            <p>{user.email}</p>
-          </button>
-        ))}
+      <div>
+        <label htmlFor="impactedUsers" className="flex flex-col text-white">
+          {" "}
+          Impacted Users:
+          <input
+            id="impactedUsers"
+            value={input}
+            onChange={handleChange}
+            type="text"
+            placeholder="Enter an email ..."
+            className="text-black rounded -md p-1"
+          />
+        </label>
+      </div>
+      {input
+        ? users
+            .filter((user) => user.email.includes(input))
+            .filter((user) => {
+              return impactedUsers.findIndex((u) => u.id === user.id) === -1;
+            })
+            .map((user) => (
+              <button
+                className="text-black  hover:bg-gray-500  bg-white"
+                type="button"
+                onClick={() => handleAddUser(user)}
+              >
+                <p>{user.email}</p>
+              </button>
+            ))
+        : null}
     </div>
   );
 }
