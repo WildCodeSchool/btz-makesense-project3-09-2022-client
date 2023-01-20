@@ -1,5 +1,3 @@
-import { string } from "zod";
-
 export interface User {
   id: string;
   email: string;
@@ -11,7 +9,8 @@ export interface User {
   updatedAt: Date;
 }
 
-export interface ImpactedUser extends User {
+export interface ImpactedUser {
+  user: User;
   isExpert: boolean;
 }
 
