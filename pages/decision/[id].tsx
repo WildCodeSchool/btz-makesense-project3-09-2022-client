@@ -46,7 +46,9 @@ export default function Details() {
   const [avis, setAvis] = useState(false);
 
   const getCommentaries = async () => {
-    const { data } = await axiosInstance.get("/commentaries");
+    const { data } = await axiosInstance.get(
+      `/commentaries?decisionId=${query.id}`
+    );
     setCommentaries(data);
   };
   const getDecisionWithStatus = async () => {
@@ -111,7 +113,7 @@ export default function Details() {
   };
 
   const handleSubmit = async () => {
-    await axiosInstance.post("/commentaries/", {
+    await axiosInstance.post("/commentaries", {
       content: commentary.content,
       decisionId: query.id,
     });
