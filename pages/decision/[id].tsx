@@ -14,10 +14,12 @@ type TCommentary = {
   id: string;
   content: string;
   createdAt: string;
+  decisionId: string;
 };
 
 type TNewCommentary = {
   content: "";
+  decisionId: "";
 };
 
 export default function Details() {
@@ -37,15 +39,14 @@ export default function Details() {
   const [details, setDetails] = useState(false);
   const [commentary, setCommentary] = useState<TNewCommentary>({
     content: "",
+    decisionId: "",
   });
   const { query } = useRouter();
 
   const [avis, setAvis] = useState(false);
 
   const getCommentaries = async () => {
-    const { data } = await axiosInstance.get(
-      `/commentaries?decisionId=${query.id}`
-    );
+    const { data } = await axiosInstance.get("/commentaries");
     setCommentaries(data);
   };
   const getDecisionWithStatus = async () => {
@@ -110,8 +111,8 @@ export default function Details() {
   };
 
   const handleSubmit = async () => {
-    await axiosInstance.post("/commentaries", {
-      content: commentary,
+    await axiosInstance.post("/commentaries/", {
+      content: commentary.content,
       decisionId: query.id,
     });
   };
