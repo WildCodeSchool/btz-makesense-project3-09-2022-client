@@ -111,8 +111,6 @@ export default function Details() {
   };
 
   const handleSubmit = async () => {
-    console.log(commentary.content);
-    console.log(query.id);
     await axiosInstance.post("/commentaries/", {
       content: commentary.content,
       decisionId: query.id,
