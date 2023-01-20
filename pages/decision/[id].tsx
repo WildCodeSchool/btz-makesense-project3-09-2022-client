@@ -160,7 +160,7 @@ export default function Details() {
             <h1 className="font-semibold text-2xl">{decision.title}</h1>
             <div>
               <p className="text-xs">
-                By <span className="font-bold">userName</span>
+                By <span className="font-bold">user</span>
               </p>
             </div>
           </div>

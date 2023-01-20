@@ -1,4 +1,3 @@
-import { divider } from "@uiw/react-md-editor";
 import React, {
   ChangeEvent,
   Dispatch,
@@ -7,7 +6,11 @@ import React, {
   useState,
 } from "react";
 import axiosInstance from "../../../util/axiosInstances";
-import { ImpactedUser, User } from "../../types/main";
+import { User } from "../../types/main";
+
+interface ImpactedUser extends User {
+  isExpert: boolean;
+}
 
 type Props = {
   impactedUsers: ImpactedUser[];
@@ -30,7 +33,7 @@ export default function ImpactedUsers({
     getUsers();
   }, []);
 
-  const handleAddUser = (user: ImpactedUser) => {
+  const handleAddUser = (user: User) => {
     setImpactedUsers((prevUsers) => [
       ...prevUsers,
       {
