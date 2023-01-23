@@ -32,11 +32,13 @@ export default function MyDecisionStatus() {
     <div className="w-screen full  bg-[#196C84]">
       <Navbar />
       <div className="flex flex-col md:flex-row  gap-5 justify-between">
-        <div className="flex flex-row bg-white justify-start gap-10 pl-3 pb-1 md:flex-col">
-          <StatusBar />
-          <ImpactedPeople />
-        </div>
-        <div className="flex w-full px-5 md:pr-28 flex-col">
+        {
+          // <div className="flex flex-row bg-white justify-start gap-10 pl-3 pb-1 md:flex-col">
+          // <StatusBar />
+          // <ImpactedPeople />
+          // </div>
+        }
+        <div className="flex w-full px-10  flex-col md:px-20 lg:px-30">
           {decision?.status
             .sort((a, b) => {
               if (a.order > b.order) {

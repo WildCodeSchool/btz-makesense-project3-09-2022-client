@@ -25,12 +25,21 @@ export default function StatusBar() {
       <h1 className="font-semibold">Status</h1>
 
       <div className="flex flex-col justify-between space-y-5 border-l-[5px] rounded border-solid border-[rgb(181,230,60)]">
-        {status.map((s) => (
-          <p className="flex flex-row">
-            <span className="text-green-300 ">-</span>
-            {s.name}
-          </p>
-        ))}
+        {status
+
+          .sort((a, b) => {
+            if (a.order > b.order) {
+              return 1;
+            }
+            return -1;
+          })
+
+          .map((s) => (
+            <p className="flex flex-row">
+              <span className="text-green-300 ">-</span>
+              {s.name}
+            </p>
+          ))}
       </div>
     </div>
   );

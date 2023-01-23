@@ -42,5 +42,14 @@ export type TStatus = {
 
 export interface IDecisionWithStatus extends TDecision {
   status: TStatus[];
-  user: User[];
+  user: User;
+}
+
+export enum Status {
+  INITIAL = "INITIAL",
+  FIRST_DECISION = "FIRST_DECISION",
+  CONFLICTS = "CONFLICTS",
+  DEFINITIVE = "DEFINITIVE",
+  FINAL = "FINAL",
+  UNREACHED = "UNREACHED",
 }
