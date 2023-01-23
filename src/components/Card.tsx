@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { IDecisiontWithUser, TStatus } from "../types/main";
+import {
+  IDecisiontWithUser,
+  IDecisionWithStatus,
+  TStatus,
+} from "../types/main";
 import axiosInstance from "../../util/axiosInstances";
 
 type Props = {
-  decision: IDecisiontWithUser;
+  decision: IDecisionWithStatus;
 };
 
 export default function Card({ decision }: Props) {
@@ -30,6 +34,8 @@ export default function Card({ decision }: Props) {
       }
       return -1;
     })[0];
+
+  console.log(status, lastStatus);
 
   return (
     <Link href={`/decision/${decision.id}`}>

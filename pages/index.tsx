@@ -1,22 +1,69 @@
-import { useState, useEffect } from "react";
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import Card from "../src/components/Card";
 import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
 import axiosInstance from "../util/axiosInstances";
-import { IDecisiontWithUser } from "../src/types/main";
+import {
+  IDecisiontWithUser,
+  IDecisionWithStatus,
+  Status,
+  TStatus,
+} from "../src/types/main";
+
+type StatusKey = keyof typeof Status;
+type StatusObject = {
+  [K in StatusKey]: IDecisionWithStatus[];
+};
 
 export default function Home() {
-  const [decisions, setDecisions] = useState<IDecisiontWithUser[]>([]);
+  const [decisions, setDecisions] = useState<IDecisionWithStatus[]>([]);
 
   const getDecisions = async () => {
-    const { data } = await axiosInstance("/decisions?user=include");
+    const { data } = await axiosInstance(
+      "/decisions?user=include&status=include"
+    );
     setDecisions(data);
   };
 
   useEffect(() => {
     getDecisions();
   }, []);
+
+  const decisionsByLastStatus = useMemo(() => {
+    const decisionWithLastStatus = decisions.map((decision) => ({
+      ...decision,
+      lastStatus: decision.status
+        .filter((s) => !!s.content)
+        .sort((a, b) => {
+          if (a.order < b.order) {
+            return 1;
+          }
+          return -1;
+        })[0],
+    }));
+
+    return decisionWithLastStatus.reduce(
+      (acc, curr) => {
+        const { lastStatus, ...decision } = curr;
+        if (acc[curr.lastStatus!.name as keyof StatusObject]) {
+          acc[curr.lastStatus!.name as keyof StatusObject].push(decision);
+        } else {
+          acc[curr.lastStatus!.name as keyof StatusObject] = [decision];
+        }
+        return acc;
+      },
+      {
+        CONFLICTS: [],
+        DEFINITIVE: [],
+        FINAL: [],
+        FIRST_DECISION: [],
+        INITIAL: [],
+        UNREACHED: [],
+      } as StatusObject
+    );
+  }, [decisions]);
 
   return (
     <div>
@@ -34,22 +81,43 @@ export default function Home() {
         <h1 className="font-bold ml-2">Decisions started</h1>
         <div className="bg-[#196C84]">
           <div className="flex flex-row overflow-x-scroll pt-2 pb-20 min-h-[20vh]">
-            {decisions.map((decision) => (
+            {decisionsByLastStatus.INITIAL.map((decision) => (
               <Card decision={decision} />
-            ))}
+            ))}{" "}
           </div>
           <h1 className="font-bold text-white ml-2">First decisions made</h1>
           <div className="flex flex-row overflow-x-scroll pt-2 pb-20 min-h-[20vh]">
-            {/* <Card />
-          <Card />
-          <Card /> */}
+            {decisionsByLastStatus.FIRST_DECISION.map((decision) => (
+              <Card decision={decision} />
+            ))}
           </div>
         </div>
         <h1 className="font-bold text-black ml-2 ">Final decisions made</h1>
         <div className="flex flex-row overflow-x-scroll pt-2 pb-20 min-h-[20vh]">
-          {/* <Card />
-        <Card />
-        <Card /> */}
+          {decisionsByLastStatus.FINAL.map((decision) => (
+            <Card decision={decision} />
+          ))}
+        </div>{" "}
+        <h1 className="font-bold text-black ml-2">All decisions</h1>
+        <div className="flex flex-row overflow-x-scroll pt-2 pb-20 min-h-[20vh]">
+          {decisionsByLastStatus.INITIAL.map((decision) => (
+            <Card decision={decision} />
+          ))}{" "}
+          {decisionsByLastStatus.FIRST_DECISION.map((decision) => (
+            <Card decision={decision} />
+          ))}{" "}
+          {decisionsByLastStatus.CONFLICTS.map((decision) => (
+            <Card decision={decision} />
+          ))}
+          {decisionsByLastStatus.DEFINITIVE.map((decision) => (
+            <Card decision={decision} />
+          ))}
+          {decisionsByLastStatus.UNREACHED.map((decision) => (
+            <Card decision={decision} />
+          ))}
+          {decisionsByLastStatus.FINAL.map((decision) => (
+            <Card decision={decision} />
+          ))}
         </div>
         <Footer />
       </div>

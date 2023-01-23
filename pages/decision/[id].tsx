@@ -52,12 +52,6 @@ export default function Details() {
     setCommentaries(data);
   };
 
-  // const getDecisionWithUser = async () => {
-  //   const { data } = await axiosInstance.get(
-  //     `/decision/${query.id}?user=include`
-  //   );
-  //   setDecision(data);
-  // };
   const getDecisionWithStatus = async () => {
     const { data } = await axiosInstance.get(
       `/decisions/${query.id}?status=include&user=include`
@@ -359,6 +353,7 @@ export default function Details() {
                 id="avis2"
                 className="w-3/4 min-h-[200px] bg-gray-100  mx-auto overflow-y-scroll pl-1"
               >
+                {" "}
                 <Editor
                   name="content"
                   value={commentary.content}

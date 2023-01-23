@@ -26,7 +26,7 @@ export default function decisionPage() {
         My Decisions
       </h1>
 
-      <div className=" w-screen h-screen flex-wrap flex flex-col md:flex-row justify-around items-center bg-[#24673A]">
+      <div className=" w-screen h-screen flex-wrap flex flex-col md:flex-row justify-around items-center overflow-y-scroll bg-[#24673A]">
         {decisions.map((dec) => (
           <Card decision={dec} />
         ))}
