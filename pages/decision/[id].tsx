@@ -51,9 +51,16 @@ export default function Details() {
     );
     setCommentaries(data);
   };
+
+  // const getDecisionWithUser = async () => {
+  //   const { data } = await axiosInstance.get(
+  //     `/decision/${query.id}?user=include`
+  //   );
+  //   setDecision(data);
+  // };
   const getDecisionWithStatus = async () => {
     const { data } = await axiosInstance.get(
-      `/decisions/${query.id}?status=include`
+      `/decisions/${query.id}?status=include&user=include`
     );
     setDecision(data);
   };
@@ -160,7 +167,10 @@ export default function Details() {
             <h1 className="font-semibold text-2xl">{decision.title}</h1>
             <div>
               <p className="text-xs">
-                By <span className="font-bold">user</span>
+                By{" "}
+                <span className="font-bold">
+                  {decision.user.firstName} {decision.user.lastName}
+                </span>
               </p>
             </div>
           </div>

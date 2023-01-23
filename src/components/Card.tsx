@@ -33,7 +33,7 @@ export default function Card({ decision }: Props) {
 
   return (
     <Link href={`/decision/${decision.id}`}>
-      <div className=" mx-4 min-w-[250px] h-[170px]  rounded-[10px] p-1 border-2 border-x-gray-400 bg-white">
+      <div className=" mx-4 min-w-[250px] h-[170px]  rounded-[10px] p-1 border-2 border-x-gray-400 bg-white mb-3">
         <div>
           <div>
             <div className="flex flex-row">
