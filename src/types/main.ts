@@ -42,4 +42,5 @@ export type TStatus = {
 
 export interface IDecisionWithStatus extends TDecision {
   status: TStatus[];
+  user: User[];
 }
