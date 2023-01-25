@@ -5,12 +5,7 @@ import Card from "../src/components/Card";
 import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
 import axiosInstance from "../util/axiosInstances";
-import {
-  IDecisiontWithUser,
-  IDecisionWithStatus,
-  Status,
-  TStatus,
-} from "../src/types/main";
+import { IDecisionWithStatus, Status } from "../src/types/main";
 
 type StatusKey = keyof typeof Status;
 type StatusObject = {
@@ -78,28 +73,32 @@ export default function Home() {
             Create a decision
           </Link>
         </div>
-        <h1 className="font-bold ml-2">Decisions started</h1>
+        <h1 className="font-bold ml-2 text-lg">Decisions started</h1>
         <div className="bg-[#196C84]">
           <div className="flex flex-row overflow-x-scroll pt-2 pb-20 min-h-[20vh]">
             {decisionsByLastStatus.INITIAL.map((decision) => (
               <Card decision={decision} />
             ))}{" "}
           </div>
-          <h1 className="font-bold text-white ml-2">First decisions made</h1>
+          <h1 className="font-bold text-white ml-2 text-lg">
+            First decisions made
+          </h1>
           <div className="flex flex-row overflow-x-scroll pt-2 pb-20 min-h-[20vh]">
             {decisionsByLastStatus.FIRST_DECISION.map((decision) => (
               <Card decision={decision} />
             ))}
           </div>
         </div>
-        <h1 className="font-bold text-black ml-2 ">Final decisions made</h1>
+        <h1 className="font-bold text-black ml-2 text-lg">
+          Final decisions made
+        </h1>
         <div className="flex flex-row overflow-x-scroll pt-2 pb-20 min-h-[20vh]">
           {decisionsByLastStatus.FINAL.map((decision) => (
             <Card decision={decision} />
           ))}
         </div>{" "}
-        <h1 className="font-bold text-black ml-2">All decisions</h1>
-        <div className="flex flex-row overflow-x-scroll pt-2 pb-20 min-h-[20vh]">
+        <h1 className="font-bold text-black ml-2 text-lg">All decisions</h1>
+        <div className="flex flex-row overflow-x-scroll pt-2 pb-20 min-h-[20vh]  bg-[#196C84]">
           {decisionsByLastStatus.INITIAL.map((decision) => (
             <Card decision={decision} />
           ))}{" "}

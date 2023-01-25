@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import {
-  IDecisiontWithUser,
-  IDecisionWithStatus,
-  TStatus,
-} from "../types/main";
+import { IDecisionWithStatus, TStatus } from "../types/main";
 import axiosInstance from "../../util/axiosInstances";
 
 type Props = {
