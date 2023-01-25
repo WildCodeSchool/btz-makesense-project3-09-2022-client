@@ -22,7 +22,7 @@ export default function decisionPage() {
   return (
     <div className=" flex-col justify-between">
       <Navbar />
-      <h1 className="text-white pt-5 font-bold text-2xl text-center bg-[#24673A]">
+      <h1 className="text-white pt-5 font-bold text-2xl text-center md:pb-6 bg-[#24673A]">
         My Decisions
       </h1>
 

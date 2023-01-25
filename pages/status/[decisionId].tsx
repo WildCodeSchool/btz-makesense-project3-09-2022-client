@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Navbar from "../../src/components/Navbar";
 import axiosInstance from "../../util/axiosInstances";
-import StatusBar from "../../src/components/StatusBar";
+
 import { TDecision, TStatus } from "../../src/types/main";
 import StatusForm from "../../src/components/StatusForm";
 import Footer from "../../src/components/Footer";
-import ImpactedPeople from "../../src/components/ImpactedPeople";
 
 export default function MyDecisionStatus() {
   const { query } = useRouter();
@@ -32,12 +31,6 @@ export default function MyDecisionStatus() {
     <div className="w-screen full  bg-[#196C84]">
       <Navbar />
       <div className="flex flex-col md:flex-row  gap-5 justify-between">
-        {
-          // <div className="flex flex-row bg-white justify-start gap-10 pl-3 pb-1 md:flex-col">
-          // <StatusBar />
-          // <ImpactedPeople />
-          // </div>
-        }
         <div className="flex w-full px-10  flex-col md:px-20 lg:px-30">
           {decision?.status
             .sort((a, b) => {
