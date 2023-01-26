@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Navbar from "../../src/components/Navbar";
-import Footer from "../../src/components/Footer";
-import { IDecisionWithStatus } from "../../src/types/main";
-import axiosInstance from "../../util/axiosInstances";
-import Editor from "../../src/components/Editor";
-import StatusBar from "../../src/components/StatusBar";
-import ImpactedPeople from "../../src/components/ImpactedPeople";
-import PreviewMarkdown from "../../src/components/PreviewMarkdown";
-import UpdateDecisions from "../../src/components/UpdateDecisions";
+import Link from "next/link";
+import Editor from "../../../src/components/Editor";
+import Footer from "../../../src/components/Footer";
+import ImpactedPeople from "../../../src/components/ImpactedPeople";
+import Navbar from "../../../src/components/Navbar";
+import PreviewMarkdown from "../../../src/components/PreviewMarkdown";
+import StatusBar from "../../../src/components/StatusBar";
+import UpdateDecisions from "../../../src/components/UpdateDecisions";
+import { IDecisionWithStatus } from "../../../src/types/main";
+import axiosInstance from "../../../util/axiosInstances";
 
 type TCommentary = {
   id: string;
@@ -380,7 +381,18 @@ export default function Details() {
               {decision.deadline.substring(0, 4)}
             </p>
           </div>
-        </div>
+          <Link
+            href={`/decision/${query.id}/update`}
+            className="flex flex-row justify-center"
+          >
+            <button
+              type="button"
+              className="min-w-[200px] w-10 h-15 py-2  mx-auto my-5 bg-[#E36164] rounded-2xl text-white"
+            >
+              Update Decision
+            </button>
+          </Link>
+        </div>{" "}
       </div>
       <Footer />
     </div>

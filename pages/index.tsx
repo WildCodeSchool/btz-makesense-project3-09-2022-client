@@ -16,7 +16,7 @@ export default function Home() {
   const [decisions, setDecisions] = useState<IDecisionWithStatus[]>([]);
 
   const getDecisions = async () => {
-    const { data } = await axiosInstance(
+    const { data } = await axiosInstance.get(
       "/decisions?user=include&status=include"
     );
     setDecisions(data);
