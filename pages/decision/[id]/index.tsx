@@ -10,6 +10,7 @@ import StatusBar from "../../../src/components/StatusBar";
 import UpdateDecisions from "../../../src/components/UpdateDecisions";
 import { IDecisionWithStatus } from "../../../src/types/main";
 import axiosInstance from "../../../util/axiosInstances";
+import { useAuth } from "../../../src/context/UserContext";
 
 type TCommentary = {
   id: string;
@@ -43,6 +44,8 @@ export default function Details() {
     decisionId: "",
   });
   const { query } = useRouter();
+
+  const { user } = useAuth();
 
   const [avis, setAvis] = useState(false);
 
