@@ -34,7 +34,7 @@ export default function StatusForm({ name, status }: Props) {
         onClick={handleSubmit}
         className="min-w-[200px] w-32 h-15 py-2 my-2 bg-[#E36164] rounded-2xl text-white"
       >
-        SUBMIT
+        Update
       </button>
     </div>
   );

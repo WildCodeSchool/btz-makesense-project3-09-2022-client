@@ -44,6 +44,7 @@ export default function MyDecisionStatus() {
             ))}
         </div>
       </div>
+
       <Footer />
     </div>
   );
