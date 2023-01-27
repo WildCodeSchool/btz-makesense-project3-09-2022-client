@@ -391,16 +391,24 @@ export default function Details() {
               {decision.deadline.substring(0, 4)}
             </p>
           </div>
-          <div className="flex flex-col  justify-center">
+          <div className="flex flex-col   lg:flex-row justify-between">
             <Link
               href={`/decision/${query.id}/update`}
-              className="flex flex-row justify-center"
+              className="flex flex-row justify-center mx-auto"
             >
               <button
                 type="button"
-                className="min-w-[200px] w-10 h-15 py-2   my-5 bg-[#E36164] rounded-2xl text-white"
+                className="min-w-[200px] w-10 h-15 py-2   my-5 bg-[#C1E94E] rounded-2xl text-[#196C84]"
               >
                 Amend Decision
+              </button>
+            </Link>
+            <Link href={`/status/${decision.id}`} className="mx-auto">
+              <button
+                type="button"
+                className="min-w-[200px] w-10  h-15 py-2  my-5 bg-[#FFF30D] rounded-2xl text-[#196C84] "
+              >
+                Change Status
               </button>
             </Link>
             <button
@@ -408,7 +416,7 @@ export default function Details() {
               onClick={handleDelete}
               className="min-w-[200px] w-10 h-15 py-2 mx-auto my-5 bg-[#E36164] rounded-2xl text-white"
             >
-              Delete Decision
+              Delete Decision !
             </button>
           </div>
         </div>{" "}
