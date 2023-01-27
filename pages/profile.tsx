@@ -7,9 +7,9 @@ import { AiOutlineCloudUpload } from "react-icons/ai";
 
 export default function profil() {
   return (
-    <div className="w-screen h-full">
+    <div className="w-screen h-screen">
       <Navbar />
-      <div className="w-screen h-full bg-[#C62E43] py-24 items-center justify-around align-middle flex flex-col md:flex-row-reverse  ">
+      <div className="w-screen h-[86%] bg-[#C62E43] py-24 items-center justify-around align-middle flex flex-col md:flex-row-reverse  ">
         <div className="flex flex-col justify-center my-5 mx-5 items-center shadow-md rounded-[50px] space-y-3 bg-white py-24 px-10 w-[300px] md:w-[360px]  max-h-[350px] h-1/2 border-2  lg:w-[360px] ">
           <h1 className="font-bold text-[#C62E43] min-w-[170px] text-center text-3xl">
             My Details
@@ -23,7 +23,7 @@ export default function profil() {
           />
           <button
             type="button"
-            className="w-full h-15 py-2 min-w-[170px] bg-[#E36164] rounded-2xl text-white"
+            className="w-[82%] h-15 py-2 min-w-[170px] bg-[#E36164] rounded-2xl text-white"
           >
             {" "}
             Update
@@ -45,7 +45,7 @@ export default function profil() {
 
           <button
             type="button"
-            className="w-full h-15 py-2 min-w-[170px] bg-[#E36164] rounded-2xl text-white"
+            className="w-[82%] h-15 py-2 min-w-[170px] bg-[#E36164] rounded-2xl text-white"
           >
             {" "}
             Update
@@ -61,7 +61,7 @@ export default function profil() {
           </div>
           <button
             type="button"
-            className="w-full h-15 py-2  bg-[#C62E43] min-w-[170px] rounded-2xl text-white"
+            className="w-full h-15 py-2  bg-[#E36164] min-w-[170px] rounded-2xl text-white"
           >
             {" "}
             Upload
