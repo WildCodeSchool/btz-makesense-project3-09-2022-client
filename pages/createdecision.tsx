@@ -1,5 +1,6 @@
 /* eslint-disable import/no-cycle */
 import { ChangeEvent, useState } from "react";
+import { useRouter } from "next/router";
 import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
 import { ImpactedUser } from "../src/types/main";
@@ -28,6 +29,7 @@ const defaultDecisionState = {
 };
 
 export default function createDecision() {
+  const router = useRouter();
   const [impactedUsers, setImpactedUsers] = useState<ImpactedUser[]>([]);
 
   const [decisionState, setDecisionState] =
@@ -48,6 +50,7 @@ export default function createDecision() {
       .then(() => {
         setDecisionState(defaultDecisionState);
         setImpactedUsers([]);
+        router.push("/");
       });
   };
 
