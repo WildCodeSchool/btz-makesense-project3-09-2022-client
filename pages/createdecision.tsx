@@ -64,19 +64,29 @@ export default function createDecision() {
     <div className="w-screen h-full flex flex-col justify-between">
       <Navbar />
 
-      <input type="text" />
-      <div className="bg-[#24673A] w-screen h-full">
-        <form className="w-[60%] flex flex-col m-auto h-full space-y-10 mt-4 mb-4 md:w-[50%]">
-          <input
-            name="title"
-            onChange={handleChange}
-            type="text"
-            className=" w-full h-[50px] m-auto rounded-md p-3"
-            placeholder="Title"
-            value={decisionState.title}
-          />
+      <div className="bg-[#70AF90] w-screen h-full">
+        <h1 className=" text-center my-7 text-3xl font-semibold text-[#0C3944]">
+          Create a decision
+        </h1>
+        <form className="w-[85%] flex flex-col m-auto h-full space-y-10 mt-4 mb-4 md:w-[70%]">
+          <label
+            htmlFor="title"
+            className="text-[#0C3944] font-bold text-lg mt-4 m-1"
+          >
+            Title:
+            <input
+              name="title"
+              onChange={handleChange}
+              type="text"
+              className=" w-full h-[50px] m-auto rounded-md p-3"
+              placeholder="Your title ..."
+              value={decisionState.title}
+            />
+          </label>
           <div className="container">
-            <p className="text-white font-semibold">Content:</p>
+            <p className="text-[#0C3944] font-bold text-lg mt-4 m-1">
+              Content:
+            </p>
             <Editor
               name="details"
               value={decisionState.details}
@@ -85,7 +95,9 @@ export default function createDecision() {
           </div>
 
           <div className="container">
-            <p className="text-white font-semibold">Impact on organisation:</p>
+            <p className="text-[#0C3944] font-bold text-lg mt-4 m-1">
+              Impact on organisation:
+            </p>
             <Editor
               name="impact"
               value={decisionState.impact}
@@ -93,7 +105,9 @@ export default function createDecision() {
             />
           </div>
           <div className="container">
-            <p className="text-white font-semibold">Context around decision:</p>
+            <p className="text-[#0C3944] font-bold text-lg mt-4 m-1">
+              Context around decision:
+            </p>
             <Editor
               name="context"
               value={decisionState.context}
@@ -101,7 +115,7 @@ export default function createDecision() {
             />
           </div>
           <div className="container">
-            <p className="text-white font-semibold">Risks:</p>
+            <p className="text-[#0C3944] font-bold text-lg mt-4 m-1">Risks:</p>
             <Editor
               name="risks"
               value={decisionState.risks}
@@ -109,7 +123,9 @@ export default function createDecision() {
             />
           </div>
           <div className="container">
-            <p className="text-white font-semibold">Benefits:</p>
+            <p className="text-[#0C3944] font-bold text-lg mt-4 m-1">
+              Benefits:
+            </p>
             <Editor
               name="benefits"
               value={decisionState.benefits}
@@ -120,7 +136,10 @@ export default function createDecision() {
             impactedUsers={impactedUsers}
             setImpactedUsers={setImpactedUsers}
           />
-          <label htmlFor="deadline" className="text-white font-medium">
+          <label
+            htmlFor="deadline"
+            className="text-[#0C3944] font-bold text-lg mt-4 m-1"
+          >
             Deadline:
             <input
               value={decisionState.deadline}
@@ -139,7 +158,7 @@ export default function createDecision() {
           <button
             onClick={handleSubmit}
             type="button"
-            className="min-w-[200px] w-full h-15 py-2  bg-[#E36164] rounded-2xl text-white"
+            className="min-w-[200px] w-32 h-15 py-2 mx-auto my-10 bg-[#E36164] rounded-2xl text-white"
           >
             Submit
           </button>

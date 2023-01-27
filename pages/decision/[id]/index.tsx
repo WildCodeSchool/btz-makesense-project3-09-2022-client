@@ -138,15 +138,15 @@ export default function Details() {
   return (
     <div className="flex flex-col w-full h-screen justify-between ">
       <Navbar />
-      <div className="flex flex-col-reverse  md:flex-row-reverse ">
-        <div className="flex md:flex-col justify-start items-start p-5 space-y-3 ">
+      <div className="flex flex-col-reverse  md:flex-row ">
+        <div className="flex md:flex-col justify-start items-start p-5 space-y-3 bg-[#196C84] md:mt-3 ">
           <StatusBar />
           <ImpactedPeople />
         </div>
         <div className="overflow-y-scroll flex flex-col w-screen h-screen  bg-[#196C84] mt-3">
           <div
             id={decision.id}
-            className="w-3/4 h-30  mx-auto flex flex-col bg-white  pl-1 "
+            className="w-[85%] h-30  mx-auto flex flex-col bg-slate-50 pl-1 "
           >
             <div className="flex flex-row">
               <button
@@ -173,7 +173,7 @@ export default function Details() {
             </div>
           </div>
 
-          <div className="w-3/4 h-10 font-bold bg-white border-gray-200 border-y-2 pl-1 mx-auto">
+          <div className="w-[85%] h-10 font-bold bg-slate-50 border-gray-200 border-y-2 pl-1 mx-auto">
             {!arrow6 ? (
               <button type="button" onClick={handleClick7}>
                 ▽ Details
@@ -187,14 +187,14 @@ export default function Details() {
           {details && (
             <div
               id={decision.id}
-              className="w-3/4 min-h-[500px] bg-gray-100 mx-auto overflow-y-scroll  pl-1"
+              className="w-[85%] min-h-[500px] bg-white mx-auto overflow-y-scroll  pl-1"
             >
               <h1>Details :</h1>
               <PreviewMarkdown value={decision.details} />
             </div>
           )}
 
-          <div className="w-3/4 h-10 font-bold bg-white border-gray-200 border-y-2 pl-1 mx-auto">
+          <div className="w-[85%] h-10 font-bold bg-slate-50 border-gray-200 border-y-2 pl-1 mx-auto">
             {" "}
             {!arrow1 ? (
               <button type="button" onClick={handleClick}>
@@ -209,14 +209,14 @@ export default function Details() {
           {benefits && (
             <div
               id={decision.id}
-              className="w-3/4 min-h-[200px] bg-gray-100  mx-auto overflow-y-scroll  pl-1"
+              className="w-[85%] min-h-[200px] bg-white  mx-auto overflow-y-scroll  pl-1"
             >
               <h1>BENEFITS :</h1>
               <PreviewMarkdown value={decision.benefits} />
             </div>
           )}
 
-          <div className="w-3/4 h-10 font-bold  bg-white border-gray-200 border-y-2  pl-1 mx-auto">
+          <div className="w-[85%] h-10 font-bold  bg-slate-50 border-gray-200 border-y-2  pl-1 mx-auto">
             {" "}
             {!arrow2 ? (
               <button
@@ -241,13 +241,13 @@ export default function Details() {
           {risks && (
             <div
               id="content"
-              className="w-3/4 min-h-[200px] bg-gray-100  mx-auto overflow-y-scroll   pl-1"
+              className="w-[85%] min-h-[200px] bg-white  mx-auto overflow-y-scroll   pl-1"
             >
               <h1>RISKS: {decision.risks}</h1>
               <PreviewMarkdown value={decision.risks} />
             </div>
           )}
-          <div className="w-3/4 h-10 font-bold bg-white border-gray-200 border-y-2 pl-1 mx-auto">
+          <div className="w-[85%] h-10 font-bold bg-slate-50 border-gray-200 border-y-2 pl-1 mx-auto">
             {" "}
             {!arrow3 ? (
               <button
@@ -272,13 +272,13 @@ export default function Details() {
           {impact && (
             <div
               id="content"
-              className="w-3/4 min-h-[200px] bg-gray-100  mx-auto overflow-y-scroll   pl-1"
+              className="w-[85%] min-h-[200px] bg-white  mx-auto overflow-y-scroll   pl-1"
             >
               <h1>IMPACT: </h1>
               <PreviewMarkdown value={decision.impact} />
             </div>
           )}
-          <div className="w-3/4 h-10 font-bold bg-white border-gray-200 border-y-2 pl-1 mx-auto">
+          <div className="w-[85%] h-10 font-bold bg-slate-50 border-gray-200 border-y-2 pl-1 mx-auto">
             {" "}
             {!arrow4 ? (
               <button
@@ -303,14 +303,14 @@ export default function Details() {
           {context && (
             <div
               id="content"
-              className="w-3/4 min-h-[200px] bg-gray-100  mx-auto overflow-y-scroll pl-1"
+              className="w-[85%] min-h-[200px] bg-white  mx-auto overflow-y-scroll pl-1"
             >
               <h1>CONTEXT: </h1>
               <PreviewMarkdown value={decision.context} />
             </div>
           )}
 
-          <div className="w-3/4 h-10 font-bold bg-white border-gray-200 border-y-2  pl-1 mx-auto">
+          <div className="w-[85%] h-10 font-bold bg-slate-50 border-gray-200 border-y-2  pl-1 mx-auto">
             {" "}
             {!arrow5 ? (
               <button
@@ -335,7 +335,7 @@ export default function Details() {
           {avis && (
             <div
               id="content"
-              className="w-3/4 min-h-[200px] bg-gray-100  mx-auto overflow-y-scroll  pl-1"
+              className="w-[85%] min-h-[200px] bg-white  mx-auto overflow-y-scroll  pl-1"
             >
               {commentaries.map((e) => (
                 <PreviewMarkdown value={e.content} />
@@ -355,7 +355,7 @@ export default function Details() {
             <>
               <div
                 id="avis2"
-                className="w-3/4 min-h-[200px] bg-gray-100  mx-auto overflow-y-scroll pl-1"
+                className="w-[85%] min-h-[200px] bg-whites  mx-auto overflow-y-scroll pl-1"
               >
                 {" "}
                 <Editor
@@ -376,9 +376,9 @@ export default function Details() {
           )}
           <div
             id="deadline"
-            className="w-3/4 h-12 mt-5 mx-auto bg-white mb-5 rounded-md pl-1"
+            className="w-[85%] h-12 mt-5 mx-auto bg-white mb-5 rounded-md pl-1"
           >
-            <p>
+            <p className="p-2">
               DEADLINE: {decision.deadline.substring(8, 10)}/
               {decision.deadline.substring(5, 7)}/
               {decision.deadline.substring(0, 4)}

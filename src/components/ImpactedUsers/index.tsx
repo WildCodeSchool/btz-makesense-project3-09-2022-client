@@ -90,7 +90,10 @@ export default function ImpactedUsers({
         </div>
       ))}
       <div>
-        <label htmlFor="impactedUsers" className="flex flex-col text-white">
+        <label
+          htmlFor="impactedUsers"
+          className="flex flex-col text-[#0C3944] font-bold text-lg m-1 mt-4 "
+        >
           {" "}
           Impacted Users:
           <input
@@ -99,7 +102,7 @@ export default function ImpactedUsers({
             onChange={handleChange}
             type="text"
             placeholder="Enter an email ..."
-            className="text-black rounded -md p-1"
+            className="text-black rounded-md p-1 py-2 mt-1"
           />
         </label>
       </div>
