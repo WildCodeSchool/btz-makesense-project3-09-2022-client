@@ -13,7 +13,7 @@ function StatusDetails({ status }: { status: TStatus }) {
 
   return (
     <div>
-      <div className="w-3/4 min-w-[200px] font-bold bg-white border-gray-200 border-y-2 pl-1 mx-auto">
+      <div className="w-[85%] h-10 min-w-[200px] font-bold bg-slate-50 border-gray-200 border-y-2 pl-1 mx-auto">
         {!arrow7 ? (
           <button type="button" onClick={handleClick8}>
             ▽ {status.name}
@@ -27,7 +27,7 @@ function StatusDetails({ status }: { status: TStatus }) {
       {arrow7 && (
         <div
           id={status.id}
-          className="w-3/4 min-h-[500px] bg-gray-100 mx-auto overflow-y-scroll pl-1"
+          className="w-[85%] h-10 min-h-[500px] bg-white mx-auto overflow-y-scroll pl-1"
         >
           <PreviewMarkdown value={status.content} />
         </div>

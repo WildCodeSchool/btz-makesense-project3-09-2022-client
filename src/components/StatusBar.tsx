@@ -21,7 +21,7 @@ export default function StatusBar() {
   }, [query]);
 
   return (
-    <div className=" mr-10 space-y-5  w-[45%] md:w-[35%] lg:w-[25%] ">
+    <div className=" mr-10 space-y-5  w-full mb-5">
       <h1 className="font-semibold">Status</h1>
 
       <div className="flex flex-col justify-between space-y-5 border-l-[5px] rounded border-solid border-[rgb(181,230,60)]">

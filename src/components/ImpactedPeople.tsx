@@ -26,11 +26,11 @@ export default function ImpactedPeople() {
   }, [query]);
 
   return (
-    <div>
+    <div className="w-full">
       <h2 className="font-bold">impactedPersons</h2>
-      <div className="flex flex-row justify-between">
-        <div className="flex flex-col justify-between items-start pr-5">
-          <h3 className="font-semibold flex-row">Experts:</h3>
+      <div className="flex flex-col justify-between gap-5">
+        <div className="flex flex-col justify-between items-start">
+          <h3 className="font-semibold flex col md:flex-row ">Experts:</h3>
 
           {impactedUsers
             .filter((impacted) => impacted.isExpert === true)
@@ -41,7 +41,7 @@ export default function ImpactedPeople() {
               </p>
             ))}
         </div>
-        <div className="flex flex-col justify-between items-start pl-5">
+        <div className="flex flex-col justify-between items-start ">
           <h3 className="font-semibold flex-row">Non-Experts:</h3>
           {impactedUsers
             .filter((impacted) => impacted.isExpert === false)
