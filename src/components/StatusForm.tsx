@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axiosInstance from "../../util/axiosInstances";
 import { TStatus } from "../types/main";
 import Editor from "./Editor";
@@ -11,6 +11,7 @@ type Props = {
 };
 
 export default function StatusForm({ name, status }: Props) {
+  const { query, push } = useRouter();
   const [value, setValue] = useState({
     [status.name]: status.content || "",
   });
@@ -19,6 +20,7 @@ export default function StatusForm({ name, status }: Props) {
     await axiosInstance.put(`/status/${status.id}`, {
       content: value[status.name] || "",
     });
+    push("/");
   };
 
   return (

@@ -68,6 +68,7 @@ export default function updatedecision() {
       decisionId: query.id,
       impactedUsers,
     });
+    push(`/decision/${query.id}`);
   };
 
   const handleSubmitImpactedUsers = async () => {
@@ -158,12 +159,6 @@ export default function updatedecision() {
               value={decision.context}
               setValue={setDecision}
             />
-
-            <ImpactedUsers
-              impactedUsers={impactedUsers}
-              setImpactedUsers={setImpactedUsers}
-            />
-
             <label
               htmlFor="deadline"
               className="text-[#0C3944] font-bold text-lg flex flex-col mt-4 ml-1"
@@ -185,17 +180,31 @@ export default function updatedecision() {
                 name="deadline"
               />
             </label>
+            <div className="flex flex-row justify-center">
+              <button
+                type="button"
+                onClick={handleSubmit}
+                className="min-w-[200px] w-32 h-15 py-2 mx-auto my-5 bg-[#E36164] rounded-2xl text-white"
+              >
+                Update
+              </button>
+            </div>
+
+            <ImpactedUsers
+              impactedUsers={impactedUsers}
+              setImpactedUsers={setImpactedUsers}
+            />
+            <div className="flex flex-row justify-center">
+              <button
+                type="button"
+                onClick={handleSubmitImpactedUsers}
+                className="min-w-[200px] w-32 h-15 py-2 mx-auto mt-5 mb-10 bg-[#E36164] rounded-2xl text-white"
+              >
+                Update Impacted users
+              </button>
+            </div>
           </div>
         </div>{" "}
-        <div className="flex flex-row justify-center">
-          <button
-            type="button"
-            onClick={handleSubmit}
-            className="min-w-[200px] w-32 h-15 py-2 mx-auto my-10 bg-[#E36164] rounded-2xl text-white"
-          >
-            Update
-          </button>
-        </div>
       </div>
       <Footer />
     </div>
