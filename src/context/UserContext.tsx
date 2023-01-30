@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/dot-notation */
 /* eslint-disable react/jsx-no-constructed-context-values */
 import { useRouter } from "next/router";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import axiosInstance from "../../util/axiosInstances";
 
 type TUser = {
@@ -34,6 +34,7 @@ type TCredentials = {
 type AuthState = {
   user: TUser | null;
   isAuth: boolean;
+  isLoading: boolean;
 };
 
 const UserContext = createContext<IUserContext | null>(null);
@@ -43,6 +44,7 @@ function UserContextProvider({ children }: TUserContextProviderProps) {
   const [authState, setAuthState] = useState<AuthState>({
     user: null,
     isAuth: false,
+    isLoading: true,
   });
 
   const signIn = async ({ email, password }: TCredentials) => {
@@ -54,6 +56,7 @@ function UserContextProvider({ children }: TUserContextProviderProps) {
       setAuthState(() => ({
         isAuth: true,
         user: data,
+        isLoading: false,
       }));
       const token = headers["authorization"];
       axiosInstance.defaults.headers.common.authorization = token;
@@ -68,11 +71,26 @@ function UserContextProvider({ children }: TUserContextProviderProps) {
     setAuthState({
       user: null,
       isAuth: false,
+      isLoading: false,
     });
     localStorage.removeItem("token");
     axiosInstance.defaults.headers.common.authorization = "";
     router.push("/auth/signin");
   };
+
+  useEffect(() => {
+    if (!authState.isAuth) {
+      router.push("/auth/signin");
+    }
+  }, []);
+
+  if (
+    router.pathname !== "/auth/signin" &&
+    router.pathname !== "/auth/renewpassword" &&
+    router.pathname !== "/auth/signup" &&
+    authState.isAuth === false
+  )
+    return "Unauthorized";
 
   return (
     <UserContext.Provider

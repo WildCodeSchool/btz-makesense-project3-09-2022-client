@@ -1,9 +1,11 @@
 import React, { useState, ChangeEvent } from "react";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 import Footer from "../../src/components/Footer";
 
 export default function signUp() {
+  const { push } = useRouter();
   const [formState, setFormState] = useState({
     firstName: "",
     lastName: "",
@@ -20,6 +22,7 @@ export default function signUp() {
 
       password: formState.password,
     });
+    push("/auth/signin");
   };
 
   const handleChange = (
