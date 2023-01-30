@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { IDecisionWithStatus, TStatus } from "../types/main";
 import axiosInstance from "../../util/axiosInstances";
+import { useAuth } from "../context/UserContext";
 
 type Props = {
   decision: IDecisionWithStatus;
 };
 
 export default function Card({ decision }: Props) {
+  const auth = useAuth();
+  const { user } = useAuth();
   const [status, setStatus] = useState<TStatus[]>([]);
 
   const getStatus = async () => {
@@ -39,14 +42,23 @@ export default function Card({ decision }: Props) {
         <div>
           <div>
             <div className="flex flex-row">
-              <Link href={`/status/${decision.id}`}>
+              {auth.user!.id === decision.userId ? (
+                <Link href={`/status/${decision.id}`}>
+                  <button
+                    type="button"
+                    className="border-[#196C84]  text-[#196C84] text-xs  font-semibold w-48 h-6 rounded-[50px] m-2 border-solid border-2 bg-[rgb(225,239,242)] "
+                  >
+                    {lastStatus?.name}
+                  </button>
+                </Link>
+              ) : (
                 <button
                   type="button"
                   className="border-[#196C84]  text-[#196C84] text-xs  font-semibold w-48 h-6 rounded-[50px] m-2 border-solid border-2 bg-[rgb(225,239,242)] "
                 >
                   {lastStatus?.name}
                 </button>
-              </Link>
+              )}
               <button
                 type="button"
                 className="border-[#E36164] w-24 h-6 text-[#E36164] text-xs font-semibold rounded-[50px] m-2 border-solid border-2 bg-[rgb(245,229,239)] "
