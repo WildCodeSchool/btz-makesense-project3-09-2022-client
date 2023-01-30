@@ -84,7 +84,12 @@ function UserContextProvider({ children }: TUserContextProviderProps) {
     }
   }, []);
 
-  if (router.pathname !== "/auth/signin" && authState.isAuth === false)
+  if (
+    router.pathname !== "/auth/signin" &&
+    router.pathname !== "/auth/renewpassword" &&
+    router.pathname !== "/auth/signup" &&
+    authState.isAuth === false
+  )
     return "Unauthorized";
 
   return (
