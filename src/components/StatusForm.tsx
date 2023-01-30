@@ -3,7 +3,6 @@ import { useState } from "react";
 import axiosInstance from "../../util/axiosInstances";
 import { TStatus } from "../types/main";
 import Editor from "./Editor";
-import EditorSkeletton from "./EditorSkeletton";
 
 type Props = {
   name: string;
@@ -11,7 +10,7 @@ type Props = {
 };
 
 export default function StatusForm({ name, status }: Props) {
-  const { query, push } = useRouter();
+  const { push } = useRouter();
   const [value, setValue] = useState({
     [status.name]: status.content || "",
   });
