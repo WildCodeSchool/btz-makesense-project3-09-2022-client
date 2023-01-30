@@ -75,7 +75,7 @@ function UserContextProvider({ children }: TUserContextProviderProps) {
     });
     localStorage.removeItem("token");
     axiosInstance.defaults.headers.common.authorization = "";
-    router.push("/auth/signin");
+    router.reload();
   };
 
   useEffect(() => {
