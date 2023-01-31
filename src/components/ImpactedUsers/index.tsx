@@ -8,7 +8,7 @@ import React, {
 import axiosInstance from "../../../util/axiosInstances";
 import { User } from "../../types/main";
 
-interface ImpactedUser extends User {
+export interface ImpactedUser extends User {
   isExpert: boolean;
 }
 
@@ -17,7 +17,7 @@ type Props = {
   setImpactedUsers: Dispatch<SetStateAction<ImpactedUser[]>>;
 };
 
-export default function ImpactedUsers({
+export default function ImpactedUsersComponent({
   impactedUsers,
   setImpactedUsers,
 }: Props) {
