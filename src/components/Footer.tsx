@@ -6,12 +6,12 @@ import { AiOutlineYoutube } from "react-icons/ai";
 
 export default function Footer() {
   return (
-    <div className="h-[7%] w-full bg-white flex flex-row items-center ">
+    <div className="h-[7%] w-full bg-white flex  flex-row items-center ">
       <Link
         className="ml-2 mr-[20%] md:mr-[30%] lg:mr-[40%]"
         href="https://makesense.org/mentions-legales-donnees-personnelles/"
       >
-        Mentiones Légales
+        Legal Notice
       </Link>
       <div className="flex flex-row items-center ">
         <Link href="https://linktr.ee/makesenseSocialMedia">
