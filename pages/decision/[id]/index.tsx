@@ -130,7 +130,9 @@ export default function Details() {
       content: commentary.content,
       decisionId: query.id,
     });
-    push(`/decision/${decision.id}`);
+    if (decision) {
+      push(`/decision/${decision.id}`);
+    }
   };
 
   const lastStatus = decision?.status
