@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/dot-notation */
 /* eslint-disable react/jsx-no-constructed-context-values */
 import { useRouter } from "next/router";
