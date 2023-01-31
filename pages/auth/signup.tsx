@@ -92,7 +92,7 @@ export default function signUp() {
           />{" "}
           <input
             onChange={handleChange}
-            type="text"
+            type="password"
             name="password"
             value={formState.password}
             id="password"
