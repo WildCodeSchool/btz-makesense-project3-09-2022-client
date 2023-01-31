@@ -9,8 +9,8 @@ export default function profil() {
   return (
     <div className="w-screen h-screen">
       <Navbar />
-      <form className="flex flex-col  mt-5 gap-2 md:flex-row">
-        <div className="w-screen h-[86%] overflow-y-auto bg-[#C62E43] py-24 items-center justify-around align-middle flex flex-col md:flex-row-reverse  ">
+      <form className="flex flex-col  mt-2 gap-2 md:flex-row ">
+        <div className="w-screen h-[100%] overflow-y-auto bg-[#C62E43] pt-24 pb-96 items-center justify-around align-middle flex flex-col md:flex-row-reverse  ">
           <div className="flex flex-col justify-center my-5 mx-5 items-center shadow-md rounded-[50px] space-y-3 sm:min-h-[70px] bg-white py-20 px-10 w-[300px] md:w-[360px]  max-h-[400px]   h-1/2 border-2  lg:w-[360px] ">
             <h1 className="font-bold text-[#C62E43] min-w-[170px] text-center  text-2xl">
               My Details
