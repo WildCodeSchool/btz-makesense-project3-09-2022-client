@@ -1,5 +1,4 @@
 import React, { useState, ChangeEvent } from "react";
-import axios from "axios";
 import { useRouter } from "next/router";
 
 import Footer from "../../src/components/Footer";

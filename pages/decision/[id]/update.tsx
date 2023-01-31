@@ -15,17 +15,6 @@ interface ImpactedUser extends User {
 
 export default function updatedecision() {
   const [impactedUsers, setImpactedUsers] = useState<ImpactedUser[]>([]);
-  const [users, setUsers] = useState<User[]>([]);
-  const [input, setInput] = useState("");
-
-  const getUsers = async () => {
-    const { data } = await axiosInstance.get("/users");
-    setUsers(data);
-  };
-
-  useEffect(() => {
-    getUsers();
-  }, []);
 
   const [decision, setDecision] = useState<TDecision>({
     benefits: "",

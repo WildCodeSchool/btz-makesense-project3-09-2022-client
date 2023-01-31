@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -45,8 +46,6 @@ export default function Details() {
     decisionId: "",
   });
   const { query, push } = useRouter();
-
-  const { user } = useAuth();
 
   const [avis, setAvis] = useState(false);
 

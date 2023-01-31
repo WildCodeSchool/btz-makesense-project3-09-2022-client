@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { IDecisionWithStatus, TStatus } from "../types/main";
@@ -10,7 +11,6 @@ type Props = {
 
 export default function Card({ decision }: Props) {
   const auth = useAuth();
-  const { user } = useAuth();
   const [status, setStatus] = useState<TStatus[]>([]);
 
   const getStatus = async () => {
@@ -33,8 +33,6 @@ export default function Card({ decision }: Props) {
       }
       return -1;
     })[0];
-
-  console.log(status, lastStatus);
 
   return (
     <Link href={`/decision/${decision.id}`}>
