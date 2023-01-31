@@ -91,7 +91,7 @@ function UserContextProvider({ children }: TUserContextProviderProps) {
     router.pathname !== "/auth/signup" &&
     authState.isAuth === false
   )
-    return "Unauthorized";
+    return <div>Unauthorized</div>;
 
   return (
     <UserContext.Provider
