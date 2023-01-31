@@ -3,8 +3,9 @@ import { ChangeEvent, useState } from "react";
 import { useRouter } from "next/router";
 import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
-import { ImpactedUser } from "../src/types/main";
-import ImpactedUsers from "../src/components/ImpactedUsers";
+import ImpactedUsersComponent, {
+  ImpactedUser,
+} from "../src/components/ImpactedUsers";
 import Editor from "../src/components/Editor";
 import axiosInstance from "../util/axiosInstances";
 
@@ -135,7 +136,7 @@ export default function createDecision() {
               setValue={setDecisionState}
             />
           </div>
-          <ImpactedUsers
+          <ImpactedUsersComponent
             impactedUsers={impactedUsers}
             setImpactedUsers={setImpactedUsers}
           />
