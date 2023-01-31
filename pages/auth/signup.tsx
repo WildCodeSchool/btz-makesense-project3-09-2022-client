@@ -3,6 +3,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 
 import Footer from "../../src/components/Footer";
+import axiosInstance from "../../util/axiosInstances";
 
 export default function signUp() {
   const { push } = useRouter();
@@ -15,7 +16,7 @@ export default function signUp() {
   });
 
   const handleSubmit = () => {
-    axios.post("http://localhost:4000/api/v1/auth/signup", {
+    axiosInstance.post("/auth/signup", {
       firstName: formState.firstName,
       lastName: formState.lastName,
       email: formState.email,
