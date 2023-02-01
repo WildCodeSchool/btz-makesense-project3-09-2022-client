@@ -67,7 +67,7 @@ export default function Navbar() {
               </Link>
             </div>
             <div className="sm:hidden md:flex flex-col justify-center align-middle items-center ">
-              <Link href="/decisionpage">
+              <Link href="/notifications">
                 <CiFaceSmile className="m-auto" />
                 <p className="text-xs">Notifications</p>{" "}
               </Link>
