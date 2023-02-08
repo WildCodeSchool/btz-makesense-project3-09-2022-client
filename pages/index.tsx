@@ -50,7 +50,7 @@ export default function Home() {
         return acc;
       },
       {
-        CONFLICTS: [],
+        CONFLITS: [],
         DEFINITIVE: [],
         FINAL: [],
         FIRST_DECISION: [],
@@ -59,6 +59,8 @@ export default function Home() {
       } as StatusObject
     );
   }, [decisions]);
+
+  console.log(decisionsByLastStatus);
 
   return (
     <div>
@@ -99,13 +101,10 @@ export default function Home() {
         </div>{" "}
         <h1 className="font-bold text-black ml-2 text-lg">All decisions</h1>
         <div className="flex flex-row overflow-x-scroll pt-2 pb-20 min-h-[20vh]  bg-[#196C84]">
-          {decisionsByLastStatus.INITIAL.map((decision) => (
-            <Card decision={decision} />
-          ))}{" "}
           {decisionsByLastStatus.FIRST_DECISION.map((decision) => (
             <Card decision={decision} />
           ))}{" "}
-          {decisionsByLastStatus.CONFLICTS.map((decision) => (
+          {decisionsByLastStatus.CONFLITS.map((decision) => (
             <Card decision={decision} />
           ))}
           {decisionsByLastStatus.DEFINITIVE.map((decision) => (
