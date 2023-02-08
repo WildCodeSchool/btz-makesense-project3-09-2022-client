@@ -48,7 +48,7 @@ export interface IDecisionWithStatus extends TDecision {
 export enum Status {
   INITIAL = "INITIAL",
   FIRST_DECISION = "FIRST_DECISION",
-  CONFLICTS = "CONFLICTS",
+  CONFLITS = "CONFLITS",
   DEFINITIVE = "DEFINITIVE",
   FINAL = "FINAL",
   UNREACHED = "UNREACHED",
